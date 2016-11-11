@@ -29,7 +29,6 @@
                                 'Authorization': "Bearer " + token()
                             }
                         });
-
                     }
                 }
             }

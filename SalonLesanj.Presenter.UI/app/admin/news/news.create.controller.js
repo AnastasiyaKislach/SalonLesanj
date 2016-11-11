@@ -4,11 +4,11 @@
     angular.module('news')
         .controller('NewsCreateController', NewsCreateController);
 
-    NewsCreateController.$inject = ['$scope', 'dataContext', 'Upload', 'accountService', '$location', '$route', '$rootScope'];
+    NewsCreateController.$inject = ['$scope', 'dataContext', 'accountService', '$location', '$route', '$rootScope', 'fileService'];
 
-    function NewsCreateController($scope, dataContext, Upload, accountService, $location, $route, $rootScope) {
+    function NewsCreateController($scope, dataContext, accountService, $location, $route, $rootScope, fileService) {
 
-
+       
         $scope.init = function () {
 
             CKEDITOR.replace('newsContent',
@@ -27,10 +27,11 @@
         if (!accountService.getUser().isAdmin) {
             $location.path('/login');
         } else {
-            dataContext.files.getAll(function (response) {
-                $rootScope.images = response;
-                alert($rootScope.images);
-            });
+            //dataContext.files.getAll(function (response) {
+            //    $rootScope.images = response;
+            //    fileService.add(response);
+            //    alert($rootScope.images);
+            //});
             $scope.create = function (newsCreateForm) {
                 $scope.creation = true;
                 if (newsCreateForm.$valid) {

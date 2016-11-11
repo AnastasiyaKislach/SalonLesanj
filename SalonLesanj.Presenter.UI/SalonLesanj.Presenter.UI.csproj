@@ -109,6 +109,7 @@
     <Content Include="app\admin\appointments\appointments.controller.js" />
     <Content Include="app\admin\appointments\view.html" />
     <Content Include="app\admin\brands\view.html" />
+    <Content Include="app\components\ckePartials\filesService.js" />
     <Content Include="app\components\ckePartials\partial.controller.js" />
     <Content Include="app\admin\dresses\dress.create.controller.js" />
     <Content Include="app\admin\dresses\edit.html" />
