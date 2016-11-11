@@ -1,0 +1,17 @@
+﻿[
+    {
+        "id": 1,
+        "name": "San Patrick",
+        "img": "Images/brands/San_Patrick.jpg"
+    },
+    {
+        "id": 2,
+        "name": "La Sposa",
+        "img": "Images/brands/La_Sposa.jpg"
+    },
+    {
+        "id": 3,
+        "name" : "Pronovias",
+        "img": "Images/brands/Pronovias.jpg"
+    }
+]

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" id="ng-app" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--<base ng-href="/">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title ng-bind="title"></title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" ng-href="Images/LiteraL.png" type="image/x-icon">
+
+    <link ng-href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link ng-href="Content/main.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+
+    <script src="Scripts/ng-table.js"></script>
+    <link ng-href="Scripts/ng-table.min.css" rel="stylesheet" />
+    <link href="Content/animate.css" rel="stylesheet" />
+
+    <script src="http://code.jquery.com/jquery-2.2.2.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/wow.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+
+    <link rel="stylesheet" ng-href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="Content/chosen/chosen.css" rel="stylesheet" />
+    <script src="Scripts/chosen/chosen.jquery.js"></script>
+
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="Scripts/ng-file-upload.min.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+
+    <script src="Scripts/moment.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/routing.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/run.js"></script>
+
+    <script src="app/components/extentions/extention.js"></script>
+    <script src="app/components/slider/controller.js"></script>
+    <script src="app/data-access/api-factory.js"></script>
+    <script src="app/data-access/dataContext.js"></script>
+    <script src="app/components/brands/brands.controller.js"></script>
+    <script src="app/wedding_dresses/filter.js"></script>
+    <script src="app/accessories/controller.js"></script>
+    <script src="app/accessories/filter.js"></script>
+    <script src="app/appointment/controller.js"></script>
+    <script src="app/appointment/filterBySelect.js"></script>
+    <script src="app/wedding_dresses/wedding-dresses.controller.js"></script>
+    <script src="app/components/paging/offset.js"></script>
+    <script src="app/components/paging/directive.js"></script>
+    <script src="app/components/gmap/directive.js"></script>
+    <script src="app/news/controller.js"></script>
+    <script src="app/news/filter.js"></script>
+    <script src="app/home/controller.js"></script>
+    <script src="app/about/controller.js"></script>
+    <script src="app/about/feedBack.service.js"></script>
+    <script src="app/account/controller.js"></script>
+    <script src="app/account/accountService.js"></script>
+    <script src="app/admin/dresses/dress.create.controller.js"></script>
+    <script src="app/admin/dresses/dress.edit.controller.js"></script>
+    <script src="app/admin/imgLoad.js"></script>
+    <script src="app/account/compareTo.js"></script>
+    <script src="app/components/paging/pagination-factory.js"></script>
+    <script src="app/admin/accessories/accessory.create.controller.js"></script>
+    <script src="app/admin/accessories/accessory.edit.controller.js"></script>
+    <script src="app/admin/appointments/appointments.controller.js"></script>
+    <script src="app/admin/kinds/kinds.controller.js"></script>
+    <script src="app/admin/news/news.create.controller.js"></script>
+    <script src="app/admin/news/news.edit.controller.js"></script>
+    <script src="app/admin/brands/brands.controller.js"></script>
+    <script src="app/admin/settings/settings.controller.js"></script>
+    <script src="app/components/sharing/sharing.service.js"></script>
+    <script src="app/components/upload/loadService.js"></script>
+
+</head>
+<body id="page-top">
+
+    <div class="header">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" ng-href="#page-top"><img src="Images/logo_mini.png" class="img-responsive logo" alt="" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" ng-href="#/wedding-dresses">Свадебные платья</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" ng-href="#/accessories">Аксессуары</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" ng-href="#/news">Новости</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" ng-href="#/about">О нас</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" ng-href="#/appointment">Запись на примерку</a>
+                        </li>
+                        <li>
+                            <a ng-href="#/login" ng-hide="user.isAuthorize">
+                                <i class="glyphicon glyphicon-log-in"></i> Войти
+                            </a>
+                        </li>
+                        <li ng-show="user.isAdmin">
+                            <a ng-href="#/admin">
+                                <i class="glyphicon glyphicon-user"></i> Админ
+                            </a>
+                        </li>
+                        <li ng-show="user.isAuthorize">
+                            <a ng-click="user.logOut()">
+                                <i class="glyphicon glyphicon-log-out"></i> Выйти
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div ng-view class="render-body"></div>
+
+    <div class="footer" ng-controller="InfoController">
+        <div class="container">
+            <div class="row links-box">
+                <div class="col-md-offset-1 col-md-3 abt">
+                    <ul>
+                        <a ng-href="#/wedding-dresses">
+                            <h4 class="footer-menu-header">СВАДЕБНЫЕ ПЛАТЬЯ</h4>
+                        </a>
+                        <li ng-repeat="brand in brands">
+                            <a ng-href="#/wedding-dresses/{{brand.Title}}">{{brand.Title}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-offset-1 col-md-3 abt2">
+                    <ul>
+                        <a ng-href="#/accessories">
+                            <h4 class="footer-menu-header">АКСЕССУАРЫ</h4>
+                        </a>
+                        <li ng-repeat="kind in kinds">
+                            <a ng-href="#/accessories/{{kind.Title}}">{{kind.TitleRus}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-md-offset-1 abt2">
+                    <ul>
+                        <a ng-href="#/about">
+                            <h4 class="footer-menu-header">О НАС</h4>
+                        </a>
+                        <li>
+                            <a ng-href="#/about/#salon">О салоне</a>
+                        </li>
+                        <li>
+                            <a ng-href="#/about/#interior">Интерьер</a>
+                        </li>
+                        <li>
+                            <a ng-href="#/about/#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row contacts-box">
+                <div class="col-md-offset-1 col-md-5 cust">
+                    <ul>
+                        <li>
+                            <i class="glyphicon glyphicon-earphone"></i>
+                            <span>{{settings.PhoneNumber1}} {{settings.PhoneNumber2}}</span>
+                        </li>
+                        <li>
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            <span> {{settings.Address}} </span>
+                        </li>
+                        <li>
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            <span> {{settings.Email}} </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-offset-1 col-md-5 cust2">
+                    <ul>
+                        <li>
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            <span> Время работы:</span>
+                        </li>
+                        <li>
+                            <p>{{settings.Worktime1}}</p>
+                        </li>
+                        <li>
+                            <p>{{settings.Worktime2}}</p>
+                        </li>
+                        <li>
+                            <p>{{settings.Worktime3}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row follow-us-box">
+                <i class="fa fa-vk"></i>
+                <span> Наша группа </span>
+                <a ng-href="{{settings.Socialhub}}">ВКонтакте</a>
+            </div>
+            <div class="row copyright-box">
+                <span>Copyright </span>
+                <i class="glyphicon glyphicon-copyright-mark"></i>
+                <span> 2016. All Rights Reserved.</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+</html>

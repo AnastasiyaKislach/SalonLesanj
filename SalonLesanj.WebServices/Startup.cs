@@ -1,0 +1,15 @@
+﻿using Microsoft.Owin;
+using Owin;
+
+[assembly: OwinStartup(typeof(SalonLesanj.WebServices.Startup))]
+
+namespace SalonLesanj.WebServices
+{
+    public partial class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            ConfigureAuth(app);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+﻿<div class="details">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">БРЕНДЫ</h2>
+        </div>
+        <div class="brands-text text-center">
+            <span>{{settings.AboutShort}}</span>
+        </div>
+        <div class="row row-container">
+            <div class="col-md-4 arriv-left2 wow bounceInLeft" ng-repeat="brand in brands">
+                <a href="#/wedding-dresses/{{brand.Title}}">
+                    <div class="details-image">
+                        <img ng-src={{brand.ImageUrl}} class="img-responsive" />
+                    </div>
+                    <div class="brand-title text-center">
+                        <h2 class="h2_title">{{brand.Title}}</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿[
+    {
+        "id": "CHAQUETA LA 114",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 114.jpg",
+        "name": "CHAQUETA LA 114",
+        "kind": "Bolero"
+
+    },
+    {
+        "id": "CHAQUETA LA 184",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 184.jpg",
+        "name": "CHAQUETA LA 184",
+        "kind": "Bolero"
+    },
+    {
+        "id": "CHAQUETA LA 216",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 216.jpg",
+        "name": "CHAQUETA LA 216",
+        "kind": "Bolero"
+    },
+    {
+        "id": "CHAQUETA LA 218",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 218.jpg",
+        "name": "CHAQUETA LA 218",
+        "kind": "Bolero"
+    },
+    {
+        "id": "CHAQUETA LA 219",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 219.jpg",
+        "name": "CHAQUETA LA 219",
+        "kind": "Bolero"
+    },
+    {
+        "id": "PT-2567",
+        "imageUrl": "Images/accessories/jewellery/PT-2567.jpg",
+        "name": "PT-2567",
+        "kind": "Jewellery"
+
+    },
+    {
+        "id": "PT-2570",
+        "imageUrl": "Images/accessories/jewellery/PT-2570.jpg",
+        "name": "PT-2570",
+        "kind": "Jewellery"
+    },
+    {
+        "id": "PT-2572",
+        "imageUrl": "Images/accessories/jewellery/PT-2572.jpg",
+        "name": "PT-2572",
+        "kind": "Jewellery"
+    },
+    {
+        "id": "PT-2574",
+        "imageUrl": "Images/accessories/jewellery/PT-2574.jpg",
+        "name": "PT-2574",
+        "kind": "Jewellery"
+    },
+    {
+        "id": "PT-2576",
+        "imageUrl": "Images/accessories/jewellery/PT-2576.jpg",
+        "name": "PT-2576",
+        "kind": "Jewellery"
+    },
+    {
+        "id": "V-2852",
+        "imageUrl": "Images/accessories/veils/V-2852.jpg",
+        "name": "V-2852",
+        "kind": "Veils"
+
+    },
+    {
+        "id": "V-2007",
+        "imageUrl": "Images/accessories/veils/V-2007.jpg",
+        "name": "V-2007",
+        "kind": "Veils"
+    },
+    {
+        "id": "V-2501",
+        "imageUrl": "Images/accessories/veils/V-2501.jpg",
+        "name": "V-2501",
+        "kind": "Veils"
+    },
+    {
+        "id": "V-2758",
+        "imageUrl": "Images/accessories/veils/V-2758.jpg",
+        "name": "V-2758",
+        "kind": "Veils"
+    },
+    {
+        "id": "V-2842",
+        "imageUrl": "Images/accessories/veils/V-2842.jpg",
+        "name": "V-2842",
+        "kind": "Veils"
+    },
+    {
+        "id": "V-2845",
+        "imageUrl": "Images/accessories/veils/V-2845.jpg",
+        "name": "V-2845",
+        "kind": "Veils"
+    }
+]

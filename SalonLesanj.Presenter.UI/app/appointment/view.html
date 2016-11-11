@@ -1,0 +1,121 @@
+﻿<div class="container fitting-box">
+    <h2 class="h2_title text-center">Запись на примерку</h2>
+    <div class="" ng-show="show">
+        <h4 class="h4_title">1. Выбранные платья:</h4>
+        <div class="row collection">
+            <div class="col-md-2 favourite" ng-repeat="dress in selected">
+                <div class="collection-item">
+                    <div class="item">
+                        <a ng-href="#/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">
+                            <img ng-src="{{dress.ImageUrl1}}" alt="{{dress.Title}}" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a ng-click="remove(dress)">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="title-box">
+                    <a ng-href="#/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
+                </div>
+            </div>
+
+        </div>
+        <p ng-show="isEmptyCart">Вы еще не выбрали платья на примерку</p><a href="" ng-hide="!isEmptyCart" ng-click="show = !show">Все равно продолжить</a>
+        <p ng-show="noPermit">Вы можете выбрать на примерку не более 5 платьев</p>
+        <div class="next-btn">
+            <a href="" ng-click="show = !show" ng-show="isEnable">Продолжить &rarr;</a>
+        </div>
+    </div>
+
+
+    <div class="" ng-show="!show">
+        <div class="prev-btn">
+            <a class="" href="" ng-click="show = !show">&larr; Назад</a>
+        </div>
+        <div class="">
+            <form name="appForm" novalidate="">
+                <div class="col-md-6">
+                    <div class="cust-info">
+                        <h4 class="h4_title">2. Введите данные о себе </h4>
+                        <div class="form-group">
+                            <label class="control-label" for="name">ФИО*:</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Введите ФИО" ng-model="name" required="" ng-maxlength="100" ng-minlength="2">
+                            <div ng-messages="appForm.name.$error" class="errors" ng-show="submiting">
+                                <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                                <span class="messages" ng-message="maxlength">Длина поля не может превышать 100 символов</span>
+                                <span class="messages" ng-message="minlength">Длина поля не должна быть меньше 2 символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Контактный телефон*:</label>
+                            <input type="tel" name="phone" class="form-control" id="inputEmail" placeholder="Введите контактный телефон" ng-model="phone" required="" ng-maxlength="13" ng-minlength="6" ng-pattertn="[]">
+                            <div ng-messages="appForm.phone.$error" class="errors" ng-show="submiting">
+                                <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                                <span class="messages" ng-message="maxlength">Длина поля не может превышать 13 символов</span>
+                                <span class="messages" ng-message="minlength">Длина поля должна быть не менее 6 символов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cust-info">
+                        <h4 class="h4_title">3. Выберите дату и время </h4>
+                        <div class="form-group">
+                            <label for="calendar">Дата:</label>
+                            <input type="date" name="date" class="form-control" id="calendar" ng-model="date" min="new Date()" max="2016-12-31" required=""></input>
+                            <div ng-messages="appForm.date.$error" class="errors" ng-show="submiting">
+                                <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Время:</label>
+                            <select class="form-control" name="time" id="time" ng-model="time" required="">
+                                <option value="" disabled="">Выберите время</option>
+                                <option value="11">11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                                <option>18:00</option>
+                            </select>
+                            <div ng-messages="appForm.time.$error" class="errors" ng-show="submiting">
+                                <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cust-info">
+                        <h4 class="h4_title">4. Детали</h4>
+                        <div class="form-group">
+                            <label for="message">Сообщение:</label>
+                            <textarea class="form-control" id="message" placeholder="Введите сообщение" ng-model="details"></textarea>
+                        </div>
+                    </div>
+                    <div class="cust-info">
+                        <div class="fitting-img">
+                            <img src="Images/lbdsilheote_pure.png" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-submit">
+                    <button type="submit" class="btn" ng-click="submitApp(appForm)">ЗАПИСАТЬСЯ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="appModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Запись на примерку</h4>
+            </div>
+            <div class="modal-body">Ваша заявка принята!</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

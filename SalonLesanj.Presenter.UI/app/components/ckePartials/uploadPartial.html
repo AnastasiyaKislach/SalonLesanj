@@ -1,0 +1,14 @@
+﻿
+<a ng-repeat="image in images" href="#" class="returnImage" data-url="{{image.Url}}" ng-click="chooseImg(image.Url)">
+    <img ng-src="{{image.Url}}" alt="Image" id="#image" data-source="{{image.Url}}" width="200" height="200" />
+</a>
+
+<!--<script type="text/javascript">
+    $(document).ready(function () {
+        $(".returnImage").click("click", function (e) {
+            var urlImage = $(this).attr("data-url");
+            window.opener.updateValue("cke_223_textInput", urlImage);
+            window.close();
+        });
+    });
+</script>-->

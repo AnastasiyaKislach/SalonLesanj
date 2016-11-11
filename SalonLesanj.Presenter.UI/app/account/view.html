@@ -1,0 +1,76 @@
+﻿<div class="forms-admin">
+    <div class="container">
+        <div class="col-md-offset-1 col-md-4 forms">
+            <div class="login-form">
+                <h2 class="h2_title">Вход</h2>
+                <form name="logForm">
+                    <div class="form-group">
+                        <label for="emailLog">Email:</label>
+                        <input type="email" name="emailLog" class="form-control" size="50" ng-model="emailLog" id="emailLog" placeholder="Введите email" required ng-maxlength=100 ng-minlength=3>
+                        <div ng-messages="logForm.emailLog.$error" class="errors" ng-show="submitingLog">
+                            <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            <span class="messages" ng-message="email">Неверный формат адреса</span>
+                            <span class="messages" ng-message="minlength">Длина поля не может быть меньше 3 символов</span>
+                            <span class="messages" ng-message="maxlength">Длина поля не может превышать 100 символов</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordLog">Пароль:</label>
+                        <input type="password" name="passwordLog" class="form-control" size="50" ng-model="passwordLog" id="passwordLog" placeholder="Введите пароль" required ng-minlength=6 ng-maxlength=20>
+                        <div ng-messages="logForm.passwordLog.$error" class="errors" ng-show="submitingLog">
+                            <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            <span class="messages" ng-message="minlength">Длина поля не может быть меньше 6 символов</span>
+                            <span class="messages" ng-message="maxlength">Длина поля не может превышать 20 символов</span>
+                            <span class="messages">{{errorLog}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" ng-click="submitLog(logForm)">Войти</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <div class="col-md-offset-2 col-md-4 forms">
+            <div class="register-form">
+                <h2 class="h2_title">Регистрация</h2>
+                <!--<p>все поля обязательны для заполнения</p>-->
+                <form name="regForm">
+                    <div class="form-group">
+                        <label for="emailReg">Email:</label>
+                        <input type="email" name="emailReg" class="form-control" ng-model="emailReg" id="emailReg" placeholder="Введите email" required ng-maxlength=100 ng-minlength=3>
+                        <div ng-messages="regForm.emailReg.$error" class="errors" ng-show="submitingReg">
+                            <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            <span class="messages" ng-message="email">Неверный формат адреса</span>
+                            <span class="messages" ng-message="minlength">Длина поля не может быть меньше 3 символов</span>
+                            <span class="messages" ng-message="maxlength">Длина поля не может превышать 100 символов</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Пароль:</label>
+                        <input type="password" name="passwordReg" class="form-control" size="50" ng-model="passwordReg" id="inputEmail" placeholder="Введите пароль" required ng-minlength=6 ng-maxlength=20>
+                        <div ng-messages="regForm.passwordReg.$error" class="errors" ng-show="submitingReg">
+                            <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            <span class="messages" ng-message="minlength">Длина поля не может быть меньше 6 символов</span>
+                            <span class="messages" ng-message="maxlength">Длина поля не может превышать 20 символов</span>
+                        </div>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label>Подтвердите пароль</label><br/>
+                        <input type="password" name="confirmReg" class="form-control" size="50" ng-model="confirmReg" id="confirmReg" placeholder="Введите пароль" compare-to="passwordReg" required>
+                        <div ng-messages="regForm.confirmReg.$error" class="errors" ng-show="submitingReg">
+                            <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
+                            <div class="messages" ng-show="regForm.confirmReg.$error.compareTo"><span>Введенные пароли не совпадают</span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" ng-click="submitReg(regForm)">Зарегистрироваться</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

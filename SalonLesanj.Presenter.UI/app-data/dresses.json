@@ -1,0 +1,146 @@
+﻿[
+    {
+        "id": "ASIA_D",
+        "imageUrl": "Images/wedding_dresses/ASIA_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_B.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "ASIA_D1",
+        "imageUrl": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_D.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "ASIA_D2",
+        "imageUrl": "Images/wedding_dresses/ASIA_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_D.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "Devis_B1",
+        "imageUrl": "Images/wedding_dresses/devis_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_D.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "Devis_B2",
+        "imageUrl": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_D.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "Devis_B3",
+        "imageUrl": "Images/wedding_dresses/devis_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_B.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "LEDURNE_D2",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    },
+    {
+        "id": "LEDURNE_D1",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "imageUr2l": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    },
+    {
+        "id": "LEDURNE_D3",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    },
+    {
+        "id": "ASIA_D4",
+        "imageUrl": "Images/wedding_dresses/ASIA_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_B.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "ASIA_D5",
+        "imageUrl": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_D.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "ASIA_D6",
+        "imageUrl": "Images/wedding_dresses/ASIA_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/ASIA_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/ASIA_D.jpg",
+        "name": "San Patrick ASIA",
+        "brand": "San Patrick"
+    },
+    {
+        "id": "Devis_B4",
+        "imageUrl": "Images/wedding_dresses/devis_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_D.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "Devis_B5",
+        "imageUrl": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_D.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "Devis_B6",
+        "imageUrl": "Images/wedding_dresses/devis_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/devis_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/devis_B.jpg",
+        "name": "DEVIS NaviBlue",
+        "brand": "La Sposa"
+    },
+    {
+        "id": "LEDURNE_D4",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl2": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    },
+    {
+        "id": "LEDURNE_D5",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "imageUr2l": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    },
+    {
+        "id": "LEDURNE_D6",
+        "imageUrl": "Images/wedding_dresses/LEDURNE_D.jpg",
+        "imageUrl2": "Images/wedding_dresses/LEDURNE_B.jpg",
+        "imageUrl3": "Images/wedding_dresses/LEDURNE_C.jpg",
+        "name": "LEDURNE",
+        "brand": "Pronovias"
+    }
+]

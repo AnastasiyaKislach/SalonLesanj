@@ -1,0 +1,189 @@
+﻿
+/*-----------------------------------------------------------------*/
+/*---------------------------about---------------------------------*/
+/*-----------------------------------------------------------------*/
+
+@import "font.less";
+
+.about-info {
+    display: table;
+}
+
+.photo-main {
+    display: table-cell;
+    padding: 5px;
+    float: left;
+}
+
+.about-text {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 5px;
+    text-align: justify;
+
+    span {
+        .p_span(@base_link_color, 20px);
+    }
+}
+
+.contacts-container {
+    margin-bottom: 20px;
+}
+
+.contacts {
+    padding-left: 30px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-right: 20px;
+
+        li {
+        }
+    }
+}
+
+.contacts-table {
+
+    .icon {
+        .icon-base();
+    }
+
+    p {
+        .p_span(@base_link_color);
+    }
+}
+
+
+.contact-cell() {
+    display: table-cell;
+    padding: 5px 10px;
+}
+
+.contact-icon {
+    .contact-cell;
+    padding: 10px 25px 10px 0;
+}
+
+.contact-text {
+    .contact-cell;
+    vertical-align: middle;
+}
+
+
+
+.feedback {
+    padding: 0 25px;
+    right: 0;
+
+    input, textarea {
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            margin-bottom: 10px;
+            .p_span(@base_link_color);
+        }
+    }
+
+    .btn{
+        .no-outline;
+    }
+}
+
+.map {
+    margin-bottom: 20px;
+    border: 2px solid gray;
+    padding: 6px;
+
+    #map-canvas {
+        max-height: 500px;
+    }
+}
+
+
+.interier-container {
+    margin-top: 20px;
+    h2 {
+        padding-bottom: 20px;
+    }
+}
+
+.inter {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 991px) {
+    .about-text {
+
+        span {
+            .p_span(@base_link_color, 19px);
+        }
+    }
+
+    .arriv {
+        float: left;
+        width: 50%;
+    }
+
+    .map {
+        #map-canvas {
+            max-height: 400px;
+        }
+    }
+}
+
+@media(max-width: 820px) {
+    .about-text {
+
+        span {
+            .p_span(@base_link_color, 18px);
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .about-text {
+        span {
+            .p_span(@base_link_color, 17px);
+        }
+    }
+
+    .map {
+        #map-canvas {
+            max-height: 350px;
+        }
+    }
+}
+
+@media(max-width: 640px) {
+    .about-text {
+        span {
+            .p_span(@base_link_color, 16px);
+        }
+    }
+
+    .arriv {
+        float: left;
+        width: 100%;
+    }
+
+    .map {
+        #map-canvas {
+            max-height: 250px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .map {
+        #map-canvas {
+            max-height: 200px;
+        }
+    }
+}

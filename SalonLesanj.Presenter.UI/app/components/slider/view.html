@@ -1,0 +1,21 @@
+﻿<div>
+    <div class="slider-box " id="slider">
+        <div class="" ng-controller="carouselDemoCtrl">
+            <div ng-repeat="(i, slide) in slides">
+                <img ng-src="{{ slide.image }}" ng-show="i == currentIndex" />
+
+                <a class="left-control" ng-click="prev()">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right-control" ng-click="next()">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <ol class="carousel-indicators">
+                    <li class="slider-dots" ng-repeat="(i,slide) in slides" ng-class="{'active':isCurrentSlideIndex(i)}"
+                        ng-click="setCurrentSlideIndex(i);">
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

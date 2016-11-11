@@ -1,0 +1,39 @@
+﻿<div class="brands-preview-container text-center">
+    <div class="container">
+        <div class="back-arrow">
+            <a ng-href="#/accessories" ng-click="back()"><< Вернуться в коллекцию</a>
+        </div>
+        <div class="view-details">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h2_title">{{currentAccessory.Title}}</h2>
+                </div>
+                <div class="big-image-preview text-center">
+                    <div class="view-image">
+                        <img ng-src="{{currentAccessory.ImageUrl}}" alt="{{currentAccessory.Title}}" />
+                    </div>
+                </div>
+
+                <div class="text-details" ng-show="isExist(currentAccessory)">
+                    <div class="description details-cell">
+                        <span class="text-center">
+                            {{currentAccessory.Description}}
+                        </span>
+                    </div>
+                </div>
+                <div class="sharing-box">
+                    Поделиться
+                    <a><i class="fa fa-vk"></i></a>
+                    <a><i class="fa fa-odnoklassniki"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="btn-navigate">
+        <ul class="pager">
+            <li class=""><a ng-href="#/accessories/{{currentKindTitle}}/details/{{previousAccessory}}" ng-class="{'disabled': !hasPrevious}">&larr; Предующая</a></li>
+            <li class=""><a ng-href="#/accessories/{{currentKindTitle}}/details/{{nextAccessory}}" ng-class="{'disabled': !hasNext}">Следующая &rarr;</a></li>
+        </ul>
+    </div>
+</div>

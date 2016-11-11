@@ -1,0 +1,81 @@
+﻿@import "variables.less";
+
+.font(@color: @base_link_color,@bckgrd-color: none,@font-family: Calibri,Arial, @font-size: 15px) {
+    cursor: pointer;
+    color: @color;
+    background: @bckgrd-color;
+    font-family: @font-family;
+    font-size: @font-size;
+    text-decoration: none;
+}
+
+
+.icon-base(@size: 4em, @color: @icon_color) {
+    font-size: @size;
+    color: @color;
+}
+
+.position(@float, @width, @padding_right) {
+    float: @float;
+    width: @width;
+    padding-right: @padding_right;
+}
+
+.h_class(@color) {
+    font-weight: 800;
+    font-family: OfficinaSerifC-Book,serif;
+    color: @color;
+}
+
+.p_span(@color: @base_text_light_grey, @size: 16px) {
+    color: @color;
+    font-family: Calibri,Arial;
+    font-size: @size;
+}
+
+
+.next-prev() {
+
+    a {
+        .btn-design;
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 15px;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            background-color: #E1C4C0;
+        }
+    }
+}
+
+.back-arrow-btn() {
+    margin-top: 20px;
+
+
+    a {
+        .btn-design;
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 15px;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            background-color: #E1C4C0;
+        }
+    }
+}
+
+.btn-design() {
+    color: @base_link_color;
+    background-color: @btn-color;
+    border: 1px solid @btn-border-color;
+}
+
+.no-outline() {
+    .btn-design;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}

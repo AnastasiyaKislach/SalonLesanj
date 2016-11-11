@@ -1,0 +1,21 @@
+﻿<div class="brands-preview-container text-center">
+    <div class="container">
+        <div class="mainmenu">
+            <ul id="myTab" class="nav nav-pills">
+                <li ng-repeat="kind in allKinds" ng-class="{'active': currentKindTitle == kind.Title}">
+                    <a ng-href="#/accessories/{{kind.Title}}">{{kind.TitleRus}} {{$routeParams.kind}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div ng-switch="subview">
+        <div ng-switch-when="Details">
+            <ng-include src="'app/accessories/details.html'"></ng-include>
+        </div>
+        <div ng-switch-when="List">
+            <ng-include src="'app/accessories/list.html'"></ng-include>
+        </div>
+    </div>
+</div>

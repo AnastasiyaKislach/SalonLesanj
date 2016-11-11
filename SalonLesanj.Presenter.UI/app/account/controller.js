@@ -1,0 +1,47 @@
+﻿(function () {
+    'use strict';
+
+    angular.module('account')
+        .controller('AccountController', AccountController);
+
+    AccountController.$inject = ['$scope', 'accountService', '$location'];
+
+    function AccountController($scope, accountService, $location) {
+
+        $scope.submitReg = submitReg;
+        $scope.submitLog = submitLog;
+
+        function submitLog(loginForm) {
+            $scope.submitingLog = true;
+            if (loginForm.$valid) {
+                accountService.login($scope.emailLog, $scope.passwordLog).success(function (response) {
+                    $location.path('/admin');
+                }).error(function (response, e) {
+                    $scope.errorLog = response.error_description;
+                    console.log(response);
+                    console.log(e);
+                });
+            }
+        }
+        function submitReg(registerForm) {
+            $scope.submitingReg = true;
+            var user = getRegModel();
+            if (registerForm.$valid) {
+                accountService.register(user).success(function (response, e) {
+                    accountService.login($scope.emailReg, $scope.passwordReg);
+                    $location.path('/admin');
+                }).error(function (response) {
+                    alert('Произошла неизвестная ошибка при регистрации.');
+                    console.log(response);
+                });
+            }
+        }
+        function getRegModel() {
+            return {
+                email: $scope.emailReg,
+                password: $scope.passwordReg,
+                confirmPassword: $scope.confirmReg
+            }
+        }
+    }
+})();

@@ -1,0 +1,30 @@
+﻿<div class="container news-details">
+    <div class="news-container">
+        <div class="news-title">
+            <h4 class="h4_title text-center">{{currentNews.Title}}</h4>
+        </div>
+        <div class="news-full">
+            <div class="news-img-full">
+                <img ng-src="{{currentNews.ImageUrl}}" class="img-responsive" />
+            </div>
+            <div class="news-full-text">
+
+                <div class="" ng-bind-html="currentNews.Content | trusted">
+
+                </div>
+                <div class="sharing-news">
+                    <!--<div class="sharing-box">
+                        Поделиться новостью
+                        <div id="vk_share_button" ng-init="init()"></div>
+                        <a href="http://vk.com/share.php?url=http://jsfiddle.net/danialfarid/2vq88rfs/136/" target="_blank"><i class="fa fa-vk"></i></a>
+                        <a ng-click="share().vkontakte('url', currentNews.Title,'http://loveza.ru/birthday/86.jpg','dgr')" target="_blank"><i class="fa fa-vk"></i></a>
+                        <a><i class="fa fa-odnoklassniki"></i></a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="news-btn text-center">
+            <a href="#/news"><< Вернуться</a>
+        </div>
+    </div>
+</div>

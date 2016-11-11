@@ -1,0 +1,33 @@
+﻿[
+    {
+        "id": "114",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 114.jpg",
+        "name": "CHAQUETA LA 114",
+        "kind": "Болеро"
+
+    },
+    {
+        "id": "184",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 184.jpg",
+        "name": "CHAQUETA LA 184",
+        "kind": "Болеро"
+    },
+    {
+        "id": "216",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 216.jpg",
+        "name": "CHAQUETA LA 216",
+        "kind": "Болеро"
+    },
+    {
+        "id": "218",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 218.jpg",
+        "name": "CHAQUETA LA 218",
+        "kind": "Болеро"
+    },
+    {
+        "id": "219",
+        "imageUrl": "Images/accessories/jackets/CHAQUETA LA 219.jpg",
+        "name": "CHAQUETA LA 219",
+        "kind": "Болеро"
+    }
+]

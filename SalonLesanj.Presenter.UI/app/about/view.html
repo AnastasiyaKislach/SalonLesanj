@@ -1,0 +1,136 @@
+﻿<div class="about">
+    <div class="container" id="#salon">
+        <div class="text-center">
+            <h2 class="h2_title">О салоне</h2>
+        </div>
+        <div class="about-info">
+            <div class="about-text">
+                <span ng-bind="settings.About"></span>
+            </div>
+        </div>
+        <div class="interier-container" id="interior">
+
+            <div class="row text-center">
+                <h2 class="h2_title">Интерьер салона</h2>
+                <div class="col-md-offset-1 col-md-10 inter">
+                    <img ng-src="Images/inter/inter1.jpg" class="img-responsive" />
+                   <!-- <img ng-src="Images/{{settings.ImageUrl1}}" class="img-responsive" />-->
+                </div>
+                <div class="col-md-offset-1 col-md-10 inter">
+                    <img ng-src="Images/inter/inter2.jpg" class="img-responsive" />
+                   <!-- <img ng-src="Images/{{settings.ImageUrl2}}" class="img-responsive" />-->
+                </div>
+                <div class="col-md-offset-1 col-md-10 inter">
+                    <img ng-src="Images/inter/inter3.jpg" class="img-responsive" />
+                   <!-- <img ng-src="Images/{{settings.ImageUrl3}}" class="img-responsive" />-->
+                </div>
+            </div>
+        </div>
+        <div class="contacts-container contacts-table" id="contacts">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-5 arriv">
+                    <div class="contacts">
+                        <h2 class="h2_title">Контакты</h2>
+                        <ul>
+                            <li>
+                                <div class="contacts-table">
+                                    <div class="icon contact-icon">
+                                        <i class="glyphicon glyphicon-map-marker"></i>
+                                    </div>
+                                    <div class="cont contact-text">
+                                        <p>{{settings.Address}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contacts-table">
+                                    <div class="icon contact-icon">
+                                        <i class="glyphicon glyphicon-earphone "></i>
+                                    </div>
+                                    <div class="cont  contact-text">
+                                        <p>Телефоны: </p>
+                                        <p>{{settings.PhoneNumber1}}</p>
+                                        <p>{{settings.PhoneNumber2}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contacts-table">
+                                    <div class="icon contact-icon">
+                                        <i class="glyphicon glyphicon-envelope"></i>
+                                    </div>
+                                    <div class="cont contact-text">
+                                        <p>{{settings.Email}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contacts-table">
+                                    <div class="icon contact-icon">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </div>
+                                    <div class="cont contact-text">
+                                        <p> Время работы:</p>
+                                        <p>{{settings.Worktime1}}</p>
+                                        <p>{{settings.Worktime2}}</p>
+                                        <p>{{settings.Worktime3}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 arriv">
+                    <div class="feedback">
+                        <h2 class="h2_title">Обратная связь</h2>
+                        <!--<p>все поля обязательны для заполнения</p>-->
+                        <form name="feedbackForm" novalidate="">
+                            <div class="form-group">
+                                <label for="name">ФИО:</label>
+                                <input type="text" class="form-control" name="userName" ng-model="name" ng-minlength="5" ng-maxlength="100" id="name" placeholder="Введите ФИО" required=""><!--ng-pattern="[a-zA-Z]"-->
+                                <div ng-messages="feedbackForm.userName.$error" class="errors" ng-show="sending">
+                                    <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                                    <div class="messages" ng-message="maxlength">Длина поля не может превышать 100 символов</div>
+                                    <span class="messages" ng-message="minlength">Длина поля должна быть менее 5 символов</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">Адрес email:</label>
+                                <input type="email" name="userEmail" class="form-control" ng-model="email" id="inputEmail" placeholder="Введите email" required="">
+                                <div ng-messages="feedbackForm.userEmail.$error" class="errors" ng-show="sending">
+                                    <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                                    <div class="messages" ng-message="email">Адрес электронной почты некорректен</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение:</label>
+                                <textarea class="form-control" id="message" name="userMessage" ng-model="message" ng-minlength="10" ng-maxlength="1000" rows="6" required placeholder="Введите сообщение"></textarea>
+                                <div ng-messages="feedbackForm.userMessage.$error" class="errors" ng-show="sending">
+                                    <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                                    <div class="messages" ng-message="minlength">Сообщение должно быть менее 10 символов</div>
+                                    <div class="messages" ng-message="maxlength">Сообщение не должно превышать 1000 символов</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn" ng-click="send(feedbackForm)">Отправить письмо</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fbModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Обратная связь</h4>
+            </div>
+            <div class="modal-body">Ваше сообщение принято!</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal" aria-hidden="True">ОК</button></div>
+        </div>
+    </div>
+</div>

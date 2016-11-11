@@ -1,0 +1,141 @@
+﻿.slider-box {
+    margin-bottom: 30px;
+    position: relative;
+    display: block;
+
+    img {
+        width: 100%;
+        height: 545px;
+    }
+
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        display: inline-block;
+        margin-top: -10px;
+    }
+
+    .glyphicon-chevron-left {
+        left: 50%;
+        margin-left: -10px;
+    }
+
+    .glyphicon-chevron-right {
+        right: 50%;
+        margin-right: -10px;
+    }
+
+    .slider-dots {
+        margin: 0 1em;
+    }
+}
+
+.control() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.left-control {
+    .control;
+    background-repeat: repeat-x;
+}
+
+.right-control {
+    .control;
+    right: 0;
+    left: auto;
+    background-repeat: repeat-x;
+}
+
+@media (max-width: 1280px) {
+    .slider-box {
+        img {
+            max-height: 600px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .slider-box {
+        img {
+            max-height: 422px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-box {
+        img {
+            max-height: 327px;
+        }
+    }
+
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right {
+        width: 30px;
+        height: 30px;
+        margin-top: -10px;
+        font-size: 20px;
+    }
+
+    .glyphicon-chevron-left {
+        margin-left: -10px;
+    }
+
+    .glyphicon-chevron-right {
+        margin-right: -10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .slider-box {
+        img {
+            max-height: 272px;
+        }
+    }
+
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-box {
+        img {
+            max-height: 204px;
+        }
+    }
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .slider-box {
+        img {
+            max-height: 181px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .slider-box {
+        img {
+            max-height: 136px;
+        }
+    }
+}

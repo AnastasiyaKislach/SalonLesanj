@@ -1,0 +1,32 @@
+﻿<div class="container">
+    <div class="row bridal-container text-center">
+        <div ng-repeat="dress in currentBrand.Dresses | paging: 3" class="col-md-4 arriv-left2 wow zoomIn">
+            <div class="img-preview">
+                <a ng-href="#/wedding-dresses/{{currentBrandTitle}}/details/{{dress.Title}}">
+                    <img ng-src="{{dress.ImageUrl1}}" class="img-responsive" alt="{{dress.Title}}" />
+                </a>
+            </div>
+            <div class="modification-container" ng-show="user.isAdmin">
+                <div class="crt-btn">
+                    <a class="editing" ng-href="#/admin/wedding-dresses/edit/{{dress.Title}}">ПРАВИТЬ</a>
+                </div>
+                <div class="crt-btn">
+                    <a class="editing" ng-click="remove(dress.Id)">УДАЛИТЬ</a>
+                </div>
+            </div>
+            <div class="like-title-container">
+                <div class="title-box">
+                    <a ng-href="#/wedding-dresses/{{currentBrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
+                </div>
+                <div class="like-box">
+                    <a ng-click="selectDress(dress)">
+                        <i class="glyphicon" ng-class="{'glyphicon-star': dress.isSelect, 'glyphicon-star-empty': !dress.isSelect}"></i> {{dress.isSelect ? ' удалить из примерки' : ' добавить на примерку'}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <pagination max-size="3" default-page-size="3" boundary-links="true" items="currentBrand.Dresses"></pagination>
+    </div>
+</div>

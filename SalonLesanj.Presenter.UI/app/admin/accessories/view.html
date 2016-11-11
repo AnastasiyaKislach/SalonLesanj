@@ -1,0 +1,78 @@
+﻿<div class="dataContainer">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">ДОБАВЛЕНИЕ АКСЕССУАРА</h2>
+        </div>
+        <form name="accessoryCreateForm" class="form-data" novalidate="">
+            <div class="row half">
+                <div class="col-md-6 lefthalf">
+
+                    <div class="form-group">
+                        <label for="">Название:</label>
+                        <input type="text" name="" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="accessoryTitle" id="" placeholder="Введите название" required="">
+                        <div ng-messages="accessoryCreateForm.accessoryTitle.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Описание:</label>
+                        <textarea class="form-control" id="" name="description" ng-model="description" ng-minlength="10" ng-maxlength="1000" rows="6" placeholder="Введите описание"></textarea>
+                        <div ng-messages="accessoryCreateForm.description.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
+                            <div class="messages" ng-message="maxlength">Описание не должно превышать 1000 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Категория:</label>
+                        <select ng-model="kindId" name="kindId" class=" form-control">
+                            <option disabled="">Выберите категорию</option>
+                            <option ng-repeat="kind in accessoryKinds" value="{{kind.Id}}">{{kind.TitleRus}}</option>
+                        </select>
+                        <div ng-messages="accessoryCreateForm.kindId.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div class="form-group upload-btn">
+                        <div class="file_upload btn">
+                            <div class="button" ngf-select ng-model="file" onchange="readURL(this)"><i class="glyphicon glyphicon-upload"></i> Загрузить фотографию</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-5 righthalf">
+                    <div class="uploads">
+                        <div class="">
+                            <img name="resourse1" class="resourse1 img-responsive" title="" />
+                            <div ng-messages="accessoryCreateForm.resourse1.$error" class="errors" ng-show="creation">
+                                <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="admin-btn">
+                    <div class="form-group text-center">
+                        <button id="files" type="submit" class="btn btn-lg" ng-click="create(accessoryCreateForm)">Создать запись</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div id="accessoryCreateModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Добавление аксессуара</h4>
+            </div>
+            <div class="modal-body">Запись успешно создана</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

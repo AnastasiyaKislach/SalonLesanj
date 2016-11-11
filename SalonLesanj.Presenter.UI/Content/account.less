@@ -1,0 +1,34 @@
+﻿.forms-admin {
+    padding: 3em 0 3em;
+
+    button {
+        &:focus, &:active {
+            outline: none;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .forms-admin {
+        padding-top: 1em;
+
+        .forms {
+            margin-bottom: 3em;
+            padding-right: 4em;
+            float: left;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .forms-admin {
+
+        .forms {
+            margin-bottom: 3em;
+            padding-right: 15px;
+            float: left;
+            width: 100%;
+        }
+    }
+}

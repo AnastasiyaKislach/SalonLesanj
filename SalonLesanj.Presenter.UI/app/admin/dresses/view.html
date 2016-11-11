@@ -1,0 +1,96 @@
+﻿<div class="dataContainer">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">ДОБАВЛЕНИЕ ПЛАТЬЯ</h2>
+        </div>
+        <form name="dressCreateForm" novalidate="">
+            <div class="row half">
+                <div class="col-md-5 lefthalf">
+                    <div class="form-group">
+                        <label for="">Название:</label>
+                        <input type="text" name="dressTitle" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="dressTitle" id="" placeholder="Введите название" required="">
+                        <div ng-messages="dressCreateForm.dressTitle.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Бренд:</label>
+                        <select ng-model="brandId" class="form-control" name="brandId" required="">
+                            <option value="" disabled="">Выберите бренд</option>
+                            <option ng-repeat="brand in editBrands" value="{{brand.Id}}">{{brand.Title}}</option>
+                        </select>
+                        <div ng-messages="dressCreateForm.brandId.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-6 righthalf">
+                    <div class="form-group">
+                        <label for="description">Описание:</label>
+                        <textarea class="form-control" id="description" name="dressDescription" ng-model="dressDescription" ng-minlength="10" ng-maxlength="1000" rows="8" required placeholder="Введите описание"></textarea>
+                        <div ng-messages="dressCreateForm.dressDescription.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
+                            <div class="messages" ng-message="maxlength">Описание не должно превышать 1000 символов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="file_upload btn">
+                            <div class="button" ngf-select ng-model="files" ngf-multiple="true" onchange="readURL(this)">
+                                <i class="glyphicon glyphicon-upload"></i> Загрузить фотографии
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half text-center">
+                <div class="uploads">
+                    <div class="col-md-4 img-load">
+                        <img name="imgUrl1" class="resourse1 img-responsive" title="" ng-model="imgUrl1" src="" required />
+                        <div ng-messages="dressCreateForm.imgUrl1.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 img-load">
+                        <img name="imgUrl2" class="resourse2 img-responsive" title="" ng-model="imgUrl2" src="" required />
+                        <div ng-messages="dressCreateForm.imgUrl2.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 img-load">
+                        <img name="imgUrl3" class="resourse3 img-responsive" title="" ng-model="imgUrl3" src="" required />
+                        <div ng-messages="dressCreateForm.imgUrl3.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="admin-btn">
+                    <div class="form-group text-center">
+                        <button id="files" type="submit" class="btn btn-lg" ng-click="create(dressCreateForm)">Создать запись</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="dressCreateModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Добавление платья</h4>
+            </div>
+            <div class="modal-body">Запись успешно создана</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

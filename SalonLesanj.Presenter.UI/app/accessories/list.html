@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <div class="row bridal-container">
+        <div ng-repeat="accessory in currentKind.Accessories | paging : 3 " class="col-md-4 arriv-left2 wow zoomIn">
+            <div class="img-preview">
+                <a href="#/accessories/{{currentKindTitle}}/details/{{accessory.Title}}">
+                    <img ng-src="{{accessory.ImageUrl}}" class="img-responsive" alt="{{accessory.Title}}"/>
+                </a>
+            </div>
+            <div class="modification-container" ng-show="user.isAdmin">
+                <div class="crt-btn">
+                    <a class="editing" ng-href="#/admin/accessories/edit/{{accessory.Title}}">ПРАВИТЬ</a>
+                </div>
+                <div class="crt-btn">
+                    <a class="editing" ng-href="" ng-click="remove(accessory.Id)">УДАЛИТЬ</a>
+                </div>
+            </div>
+            <div class="like-title-container">
+                <div class="title-box">
+                    <a href="#/accessories/{{currentKindTitle}}/details/{{accessory.Title}}">{{accessory.Title}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <pagination max-size="3" default-page-size="3" boundary-links="true" items="currentKind.Accessories"></pagination>
+    </div>
+</div>
+<!--<a title="Поделиться в Вконтакте" rel="nofollow" class="fa fa-lg fa-vk"
+       onclick="window.open('http://vk.com/share.php?url=http://metanit.com/sharp/articles/mvc/16.php',
+    'Поделиться в ВКОНТАКТЕ','width=420,height=230,resizable=yes,scrollbars=yes,status=yes')"></a>-->

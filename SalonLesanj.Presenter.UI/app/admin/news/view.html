@@ -1,0 +1,65 @@
+﻿<div class="dataContainer">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">ДОБАВЛЕНИЕ НОВОСТИ</h2>
+        </div>
+        <form name="newsCreateForm" class="form-data" novalidate="">
+            <div class="row half">
+                <div class="col-md-12 lefthalf">
+                    <div class="form-group">
+                        <label for="">Название:</label>
+                        <input type="text" name="newsTitle" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="Title" id="" placeholder="Введите название" required="">
+                        <div ng-messages="newsCreateForm.newsTitle.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 50 символов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 lefthalf">
+                    <div class="form-group">
+                        <label for="">Содержание:</label>
+                        <textarea class="form-control" id="newsContent" name="newsContent" ng-model="Content" rows="10" ng-init="init()"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 righthalf">
+                    <div class="form-group upload-btn">
+                        <div class="file_upload btn">
+                            <div class="button" ngf-select ng-model="file" onchange="readURL(this)">
+                                <i class="glyphicon glyphicon-upload"></i> Загрузить фотографию
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uploads">
+                        <div class="">
+                            <img name="resourse1" class="resourse1 img-responsive" title="" />
+                            <div ng-messages="newsCreateForm.resourse1.$error" class="errors" ng-show="creation">
+                                <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="admin-btn">
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-lg" ng-click="create(newsCreateForm)">Создать запись</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="newsCreateModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Добавление новости</h4>
+            </div>
+            <div class="modal-body">Запись успешно создана</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿
+@import "functions.less";
+
+@font-face {
+    font-family: 'Olietta_script_BoldItalic';
+    src: url('../fonts/Olietta_script_BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OfficinaSerifC-Book';
+    src: url('../fonts/OfficinaSerifC-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PragmaticaCondC';
+    src: url('../fonts/PragmaticaCondC.otf') format('opentype');
+}
+
+
+
+.h2_title {
+    .h_class(@headers_black_color);
+}
+
+.h4_title {
+    .h_class(@headers_black_color);
+    margin-top: 0;
+}
+
+.reference {
+    color: @link-bckgrd-color;
+
+    &:hover {
+        color: @headers_black_color;
+    }
+}
+
+.btn-text {
+    font-family: OfficinaSerifC-Book,serif;
+    text-decoration: none;
+    font-size: 18px;
+    color: @a_hover_body_color;
+}

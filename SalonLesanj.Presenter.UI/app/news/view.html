@@ -1,0 +1,29 @@
+﻿<div class="container news-box">
+    <h2 class="h2_title text-center">Новости</h2>
+    <div class="news-container">
+        <div class="row" ng-repeat="news in newsS" ng-class="{'one-news': !isLast(news), 'last-news' : isLast(news)}">
+            <div class="col-md-5 news-img">
+                <img ng-src="{{news.ImageUrl}}" class="img-responsive" />
+            </div>
+            <div class="col-md-7 news-preview">
+                <div class="news-title">
+                    <h4 class="h4_title">{{news.Title}}</h4>
+                </div>
+                <div class="news-short-text">{{news.Content}}</div>
+
+                <div class="">
+
+                    <div class="news-btn news-btn-edit" ng-show="!root">
+                        <a href="#/news/{{news.Id}}">Читать далее >></a>
+                    </div>
+                    <div class="news-btn news-btn-edit" ng-show="user.isAdmin">
+                        <a ng-href="#/admin/news/edit/{{news.Id}}">ПРАВИТЬ</a>
+                    </div>
+                    <div class="news-btn news-btn-edit" ng-show="user.isAdmin">
+                        <a ng-click="remove(news.Id)">УДАЛИТЬ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

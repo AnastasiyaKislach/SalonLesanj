@@ -1,0 +1,33 @@
+﻿[
+    {
+        "id": "2567",
+        "imageUrl": "Images/accessories/jewellery/PT-2567.jpg",
+        "name": "PT-2567",
+        "kind": "Бижутерия"
+
+    },
+    {
+        "id": "2570",
+        "imageUrl": "Images/accessories/jewellery/PT-2570.jpg",
+        "name": "PT-2570",
+        "kind": "Бижутерия"
+    },
+    {
+        "id": "2572",
+        "imageUrl": "Images/accessories/jewellery/PT-2572.jpg",
+        "name": "PT-2572",
+        "kind": "Бижутерия"
+    },
+    {
+        "id": "2574",
+        "imageUrl": "Images/accessories/jewellery/PT-2574.jpg",
+        "name": "PT-2574",
+        "kind": "Бижутерия"
+    },
+    {
+        "id": "2576",
+        "imageUrl": "Images/accessories/jewellery/PT-2576.jpg",
+        "name": "PT-2576",
+        "kind": "Бижутерия"
+    }
+]

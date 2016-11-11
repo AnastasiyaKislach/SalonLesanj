@@ -1,0 +1,42 @@
+﻿<div class="dataContainer container">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">РЕДАКТИРОВАНИЕ КАТЕГОРИЙ АКСЕССУАРОВ</h2>
+        </div>
+
+        <div class="customm-container">
+            <div class="btn-add">
+                <div class="crt-btn">
+                    <a class="add" ng-click="add()">ДОБАВИТЬ НОВУЮ КАТЕГОРИЮ</a>
+                </div>
+            </div>
+            <table ng-table="tableParams" class="table table-bordered table-hover table-condensed" show-filter="true">
+                <tr ng-repeat="row in $data" ng-form="rowForm">
+                    <td title="'Номер'" filter="{ Id: 'number'}" sortable="'Id'" ng-switch="row.isEditing" ng-class="Id.$dirty ? 'bg-warning' : ''" ng-form="Id">
+                        <span>{{row.Id}}</span>
+                    </td>
+                    <td title="'Название'" filter="{ Title: 'text'}" sortable="'Title'" ng-switch="row.isEditing" ng-class="Title.$dirty ? 'bg-warning' : ''" ng-form="Title">
+                        <span ng-if="!row.isEditing">{{row.Title}}</span>
+                        <div ng-if="row.isEditing"  class="controls" ng-class="Title.$invalid && Title.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="Title" ng-model="row.Title" class="editable-input form-control input-sm" required />
+                        </div>
+                    </td>
+                    <td title="'Название'" filter="{ TitleRus: 'number'}" sortable="'TitleRus'" ng-switch="row.isEditing" ng-class="TitleRus.$dirty ? 'bg-warning' : ''" ng-form="TitleRus">
+                        <span ng-if="!row.isEditing">{{row.TitleRus}}</span>
+                        <div ng-if="row.isEditing" class="controls" ng-class="TitleRus.$invalid && TitleRus.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="TitleRus" ng-model="row.TitleRus" class="editable-input form-control input-sm" required />
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" ng-click="save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button>
+                        <button class="btn btn-default btn-sm" ng-click="cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button>
+                        <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button>
+                        <button class="btn btn-danger btn-sm" ng-click="del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>

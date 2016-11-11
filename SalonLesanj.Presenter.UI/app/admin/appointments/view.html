@@ -1,0 +1,68 @@
+﻿<div class="dataContainer container">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">РЕДАКТИРОВАНИЕ ЗАЯВОК</h2>
+        </div>
+
+        <div class="customm-container">
+           
+            <table ng-table="tableParams" class="table table-bordered table-hover table-condensed" show-filter="true">
+                <colgroup>
+                    <col width="5%"/>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="20%"/>
+                    <col width="5%"/>
+                    <col width="10%"/>
+                </colgroup>
+                <tr ng-repeat="row in $data" ng-form="rowsForm">
+                    <td title="'Номер'" filter="{ Id: 'number'}" sortable="'Id'" ng-switch="row.isEditing" ng-class="Id.$dirty ? 'bg-warning' : ''" ng-form="Id">
+                        <span>{{row.Id}}</span>
+                    </td>
+                    <td title="'ФИО'" filter="{ Title: 'text'}" sortable="'Name'" ng-switch="row.isEditing" ng-class="Name.$dirty ? 'bg-warning' : ''" ng-form="Name">
+                        <span ng-if="!row.isEditing">{{row.Name}}</span>
+                        <div ng-if="row.isEditing" class="controls" ng-class="Name.$invalid && Name.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="Name" ng-model="row.Name" class="editable-input form-control input-sm" required/>
+                        </div>
+                    </td>
+                    <td title="'Контактный телефон'" filter="{ Phone: 'number'}" sortable="'Phone'" ng-switch="row.isEditing" ng-class="Phone.$dirty ? 'bg-warning' : ''" ng-form="Phone">
+                        <span ng-if="!row.isEditing">{{row.Phone}}</span>
+                        <div ng-if="row.isEditing" class="controls" ng-class="Phone.$invalid && Phone.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="Phone" ng-model="row.Phone" class="editable-input form-control input-sm" required/>
+                        </div>
+                    </td>
+                    <td title="'Дата и время'" filter="{ Date: 'text'}" sortable="'Date'" ng-switch="row.isEditing" ng-class="Date.$dirty ? 'bg-warning' : ''" ng-form="Date">
+                        <span ng-if="!row.isEditing">{{row.Date}}</span>
+                        <div ng-if="row.isEditing" class="controls" ng-class="Date.$invalid && Date.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="Date" ng-model="row.Date" class="editable-input form-control input-sm" required/>
+                        </div>
+                    </td>
+                    <td title="'Детали'" filter="{ Details: 'text'}" sortable="'Details'" ng-switch="row.isEditing" ng-class="Details.$dirty ? 'bg-warning' : ''" ng-form="Details">
+                        <span ng-if="!row.isEditing">{{row.Details}}</span>
+                        <div ng-if="row.isEditing" class="controls" ng-class="Details.$invalid && Details.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="text" name="Details" ng-model="row.Details" class="editable-input form-control input-sm" required/>
+                        </div>
+                    </td>
+                    <td title="'Платья'" filter="{ Dresses: 'text'}" sortable="'Dresses'" ng-switch="row.isEditing" ng-class="Dresses.$dirty ? 'bg-warning' : ''" ng-form="Dresses">
+                        <span ng-if="!row.isEditing" ng-repeat="dress in row.Dresses">{{dress.Title}},</span>
+                        <div ng-if="row.isEditing"></div>
+                    </td>
+                    <td title="'Подтверждение'" ng-switch="row.isEditing" ng-class="IsApprove.$dirty ? 'bg-warning' : ''" ng-form="IsApprove" >
+                        <input type="checkbox" ng-model="row.IsApprove" ng-disabled="!row.isEditing" ng-if=" !row.isEditing" class="editable-input form-control input-sm">
+                        <div ng-if="row.isEditing" class="controls" ng-class="IsApprove.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                            <input type="checkbox" name="IsApprove" ng-checked="row.IsApprove" ng-model="row.IsApprove" class="editable-input form-control input-sm">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" ng-click="save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button>
+                        <button class="btn btn-default btn-sm" ng-click="cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button>
+                        <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button>
+                        <button class="btn btn-danger btn-sm" ng-click="del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

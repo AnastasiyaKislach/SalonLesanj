@@ -1,0 +1,126 @@
+﻿<div class="dataContainer">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">Основная информация</h2>
+        </div>
+        <form name="settingsForm" class="form-data" novalidate="">
+            <div class="row half">
+                <div class="col-md-5 ">
+                    <div class="form-group">
+                        <label for="">Телефон 1:</label>
+                        <input type="text" name="phoneNumber1" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.PhoneNumber1" id="">
+                        <div ng-messages="settingsForm.phoneNumber1.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Телефон 2:</label>
+                        <input type="text" name="phoneNumber2" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.PhoneNumber2" id=""/>
+                        <div ng-messages="settingsForm.phoneNumber2.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Адрес:</label>
+                        <input type="text" name="adress" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Adress" id="">
+                        <div ng-messages="settingsForm.adress.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email:</label>
+                        <input type="email" name="email" class="form-control" ng-model="settings.Email" id=""/>
+                        <div ng-messages="settingsForm.email.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="email">Адрес электронной почты некорректен</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-5 ">
+                    <div class="form-group">
+                        <label for="">Режим работы:</label>
+                        <input type="text" name="worktime1" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.Worktime1" id="">
+                        <div ng-messages="settingsForm.worktime1.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Режим работы:</label>
+                        <input type="text" name="worktime2" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.Worktime2" id=""/>
+                        <div ng-messages="settingsForm.worktime2.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Режим работы:</label>
+                        <input type="text" name="worktime3" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.Worktime3" id="">
+                        <div ng-messages="settingsForm.worktime3.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 20 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Группа в соцсетях:</label>
+                        <input type="text" name="socialhub" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Socialhub" id=""/>
+                        <div ng-messages="settingsForm.socialhub.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row half">
+                <div class="col-md-11">
+                    <div class="form-group">
+                        <label for="">Текст для записи в салон:</label>
+                        <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.Appointment" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
+                        <div ng-messages="settingsForm.aboutShort.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 1000 символов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="row half">
+                <div class="col-md-11">
+                    <div class="form-group">
+                        <label for="">О нас (на главной):</label>
+                        <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.aboutShort" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
+                        <div ng-messages="settingsForm.aboutShort.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 1000 символов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="col-md-11">
+                    <div class="form-group">
+                        <label for="">О нас (весь текст):</label>
+                        <textarea class="form-control about" name="about" ng-model="settings.About" rows="10" cols="80" ng-init="init()"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row half">
+                <div class="col-md-11">
+                    <div class="form-group">
+                        <label for="">Интерьер:</label>
+                        <textarea class="form-control" name="interior" ng-model="settings.Interior" rows="10" cols="80" ng-init="init()"></textarea>
+                  </div>
+                </div>
+            </div>
+            <div class="row half">
+                <div class="admin-btn">
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-lg" ng-click="saveChanges(settingsForm)">Сохранить изменения</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
