@@ -1,64 +1,65 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using SalonLesanj.WebServices.Providers;
 using SalonLesanj.WebServices.Models;
+using SalonLesanj.WebServices.Providers;
 
-namespace SalonLesanj.WebServices
-{
-    public partial class Startup
-    {
-        public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+namespace SalonLesanj.WebServices {
+	public partial class Startup {
+		public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
-        public static string PublicClientId { get; private set; }
+		public static string PublicClientId { get; private set; }
 
-        // Дополнительные сведения о настройке аутентификации см. по адресу: http://go.microsoft.com/fwlink/?LinkId=301864
-        public void ConfigureAuth(IAppBuilder app)
-        {
-            // Настройка контекста базы данных и диспетчера пользователей для использования одного экземпляра на запрос
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+		// For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+		public void ConfigureAuth(IAppBuilder app) {
+			// Configure the db context and user manager to use a single instance per request
+			app.CreatePerOwinContext(ApplicationDbContext.Create);
+			app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
-            // Включение использования файла cookie, в котором приложение может хранить информацию для пользователя, выполнившего вход,
-            // и использование файла cookie для временного хранения информации о входах пользователя с помощью стороннего поставщика входа
-            app.UseCookieAuthentication(new CookieAuthenticationOptions());
-            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+			// Enable the application to use a cookie to store information for the signed in user
+			// and to use a cookie to temporarily store information about a user logging in with a third party login provider
+			app.UseCookieAuthentication(new CookieAuthenticationOptions());
+			app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            // Настройка приложения для потока обработки на основе OAuth
-            PublicClientId = "self";
-            OAuthOptions = new OAuthAuthorizationServerOptions
-            {
-                TokenEndpointPath = new PathString("/Token"),
-                Provider = new ApplicationOAuthProvider(PublicClientId),
-                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                AllowInsecureHttp = true
-            };
+			// Configure the application for OAuth based flow
+			PublicClientId = "self";
+			OAuthOptions = new OAuthAuthorizationServerOptions {
+				TokenEndpointPath = new PathString("/Token"),
+				Provider = new ApplicationOAuthProvider(PublicClientId),
+				AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+				AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+				// In production mode set AllowInsecureHttp = false
+				AllowInsecureHttp = true
+			};
 
-            // Включение использования приложением маркера-носителя для аутентификации пользователей
-            app.UseOAuthBearerTokens(OAuthOptions);
+			// Enable the application to use bearer tokens to authenticate users
+			app.UseOAuthBearerTokens(OAuthOptions);
 
-            // Раскомментируйте приведенные далее строки, чтобы включить вход с помощью сторонних поставщиков входа
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+			// Uncomment the following lines to enable logging in with third party login providers
+			//app.UseMicrosoftAccountAuthentication(
+			//    clientId: "",
+			//    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //    consumerKey: "",
-            //    consumerSecret: "");
+			//app.UseTwitterAuthentication(
+			//    consumerKey: "",
+			//    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+			//app.UseFacebookAuthentication(
+			//    appId: "",
+			//    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
-        }
-    }
+			//app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+			//{
+			//    ClientId = "",
+			//    ClientSecret = ""
+			//});
+		}
+	}
 }

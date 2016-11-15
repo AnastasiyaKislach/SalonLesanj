@@ -20,7 +20,6 @@
     angular.module('sharing', []);
     angular.module('file', []);
     angular.module('settings', []);
-    angular.module('partial', []);
 
 
     angular.module('app',
@@ -48,7 +47,6 @@
         'sharing',
         'file',
         'settings',
-        'ngSanitize',
-        'partial'
+        'ngSanitize'
     ]);
 })();

@@ -8,7 +8,7 @@
     run.$inject = ['accountService', '$rootScope', 'dataContext'];
 
     function run(accountService, $rootScope, dataContext) {
-        accountService.confirmLogin();
+        accountService.confirmLogin(); 
 
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             if (current.$$route) {

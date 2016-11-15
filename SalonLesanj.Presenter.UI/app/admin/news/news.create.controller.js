@@ -13,10 +13,10 @@
 
             CKEDITOR.replace('newsContent',
             {
-                filebrowserImageBrowseUrl: '/app/components/ckePartials/uploadPartial.html',
-                filebrowserImageUploadUrl: '/home/uploadnow',
-                filebrowserWindowWidth: '640',
-                filebrowserWindowHeight: '480'
+                filebrowserImageBrowseUrl: 'api/File',
+                filebrowserImageUploadUrl: 'api/File'
+                //,filebrowserWindowWidth: '640',
+                //filebrowserWindowHeight: '480'
             });
         }
 
