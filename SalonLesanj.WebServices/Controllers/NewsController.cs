@@ -53,6 +53,7 @@ namespace SalonLesanj.WebServices.Controllers {
 				Id = viewModel.Id,
 				Title = viewModel.Title,
 				ImageUrl = viewModel.ImageUrl,
+				PreviewContent = viewModel.PreviewContent,
 				Content = viewModel.Content,
 				Date = viewModel.Date
 			};

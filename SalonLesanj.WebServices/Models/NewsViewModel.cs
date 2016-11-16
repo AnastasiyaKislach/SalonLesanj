@@ -9,6 +9,8 @@ namespace SalonLesanj.WebServices.Models {
 
 		public string ImageUrl { get; set; }
 
+		public string PreviewContent { get; set; }
+
 		public string Content { get; set; }
 
 		public DateTime Date { get; set; }
@@ -19,6 +21,7 @@ namespace SalonLesanj.WebServices.Models {
 			Id = news.Id;
 			Title = news.Title;
 			ImageUrl = news.ImageUrl;
+			PreviewContent = news.PreviewContent;
 			Content = news.Content;
 			Date = news.Date;
 		}

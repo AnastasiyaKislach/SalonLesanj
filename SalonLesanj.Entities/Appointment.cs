@@ -22,6 +22,8 @@ namespace SalonLesanj.Entities {
 
 		public bool IsApprove { get; set; }
 
+		public DateTime ApprovedDate { get; set; } 
+
 		public virtual List<Dress> Dresses { get; set; }
 
 		public Appointment() {

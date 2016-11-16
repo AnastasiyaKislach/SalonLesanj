@@ -5,7 +5,7 @@
         </div>
         <form name="newsCreateForm" class="form-data" novalidate="">
             <div class="row half">
-                <div class="col-md-12 lefthalf">
+                <div class="col-md-12 "><!--lefthalf-->
                     <div class="form-group">
                         <label for="">Название:</label>
                         <input type="text" name="newsTitle" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="Title" id="" placeholder="Введите название" required="">
@@ -16,13 +16,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 lefthalf">
+                <div class="col-md-12 ">
+                    <div class="form-group">
+                        <label for="">Превью новости:</label>
+                        <textarea class="form-control" id="newsPreviewContent" name="newsPreviewContent" ng-model="PreviewContent" rows="10" ng-init="init()"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 ">
                     <div class="form-group">
                         <label for="">Содержание:</label>
                         <textarea class="form-control" id="newsContent" name="newsContent" ng-model="Content" rows="10" ng-init="init()"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12 righthalf">
+                <div class="col-md-4 ">
                     <div class="form-group upload-btn">
                         <div class="file_upload btn">
                             <div class="button" ngf-select ng-model="file" onchange="readURL(this)">

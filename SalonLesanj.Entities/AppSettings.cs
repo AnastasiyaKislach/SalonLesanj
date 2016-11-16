@@ -10,8 +10,8 @@
 		public string Socialhub { get; set; }
 		public string AboutShort { get; set; }
 		public string About { get; set; }
-		public string ImageUrl1 { get; set; }
-		public string ImageUrl2 { get; set; }
-		public string ImageUrl3 { get; set; }
+		public string Interior { get; set; }
+		public string Appointment { get; set; }
+
 	}
 }
