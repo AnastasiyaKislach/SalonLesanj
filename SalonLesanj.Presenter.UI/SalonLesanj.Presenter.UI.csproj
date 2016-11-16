@@ -662,11 +662,6 @@
     <Content Include="Images\LiteraL.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\Accessories\V-2852.jpg" />
-    <Content Include="Images\uploads\ASIA_B.jpg" />
-    <Content Include="Images\uploads\ASIA_C.jpg" />
-    <Content Include="Images\uploads\ASIA_D.jpg" />
-    <Content Include="Images\uploads\devis_B.jpg" />
-    <Content Include="Images\uploads\devis_C.jpg" />
     <Content Include="Images\V-2007.jpg" />
     <Content Include="Images\V-2501.jpg" />
     <Content Include="Images\V-2758.jpg" />
@@ -1561,6 +1556,7 @@
     <Folder Include="Images\Accessories\jackets\" />
     <Folder Include="Images\Accessories\jewellery\" />
     <Folder Include="Images\Accessories\veils\" />
+    <Folder Include="Images\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SalonLesanj.WebServices\SalonLesanj.WebServices.csproj">
