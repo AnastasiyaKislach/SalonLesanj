@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="row half">
+            <div class="row half">
                 <div class="col-md-11">
                     <div class="form-group">
                         <label for="">Текст для записи в салон:</label>
@@ -84,12 +84,12 @@
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
             <div class="row half">
                 <div class="col-md-11">
                     <div class="form-group">
                         <label for="">О нас (на главной):</label>
-                        <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.aboutShort" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
+                        <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.AboutShort" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
                         <div ng-messages="settingsForm.aboutShort.$error" class="errors" ng-show="update">
                             <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
                             <div class="messages" ng-message="maxlength">Название не должно превышать 1000 символов</div>
@@ -101,7 +101,7 @@
                 <div class="col-md-11">
                     <div class="form-group">
                         <label for="">О нас (весь текст):</label>
-                        <textarea class="form-control about" name="about" ng-model="settings.About" rows="10" cols="80" ng-init="init()"></textarea>
+                        <textarea class="form-control about" name="about" ng-model="settings.About" rows="10" cols="80" ></textarea>
                     </div>
                 </div>
             </div>
@@ -111,16 +111,28 @@
                     <div class="form-group">
                         <label for="">Интерьер:</label>
                         <textarea class="form-control" name="interior" ng-model="settings.Interior" rows="10" cols="80" ng-init="init()"></textarea>
-                  </div>
+                    </div>
                 </div>
             </div>
             <div class="row half">
                 <div class="admin-btn">
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-lg" ng-click="saveChanges(settingsForm)">Сохранить изменения</button>
+                        <button type="submit" class="btn btn-lg" ng-click="saveChanges(settingsForm)" data-toggle="modal" data-target="#settingsModal">Сохранить изменения</button>
                     </div>
                 </div>
             </div>
         </form>
+    </div>
+</div>
+<div id="settingsModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Информация</h4>
+            </div>
+            <div class="modal-body">Информация обновлена</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
     </div>
 </div>

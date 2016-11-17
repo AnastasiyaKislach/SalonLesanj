@@ -4,9 +4,9 @@
     angular.module('about')
         .controller('FeedBackController', FeedBackController);
 
-    FeedBackController.$inject = ['$scope', 'feedBackService', '$location', '$route'];
+    FeedBackController.$inject = ['$scope', 'feedBackService', '$location', '$route', '$sanitize'];
 
-    function FeedBackController($scope, feedBackService, $location, $route) {
+    function FeedBackController($scope, feedBackService, $location, $route, $sanitize) {
 
         $scope.send = function (feedbackForm) {
             $scope.sending = true;

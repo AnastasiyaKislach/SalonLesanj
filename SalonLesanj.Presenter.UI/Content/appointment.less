@@ -31,6 +31,10 @@
         width: 140px;
         float: right;
     }
+
+    p {
+        font-size: 17px;
+    }
 }
 
 .favourite {
@@ -41,6 +45,7 @@
 
 .collection-item {
     display: table;
+
     i {
         top: 0px;
         position: absolute;
@@ -75,10 +80,15 @@
         font-size: 18px;
         border-radius: 15px;
         .no-outline;
+
         &:focus, &:active {
-           background-color: #E1C4C0;
+            background-color: #E1C4C0;
         }
     }
+}
+
+.next-btn-container {
+    margin-top: 200px;
 }
 
 @media (max-width: 1280px) {

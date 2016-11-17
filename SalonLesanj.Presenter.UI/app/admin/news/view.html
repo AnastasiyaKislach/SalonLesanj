@@ -19,13 +19,18 @@
                 <div class="col-md-12 ">
                     <div class="form-group">
                         <label for="">Превью новости:</label>
-                        <textarea class="form-control" id="newsPreviewContent" name="newsPreviewContent" ng-model="PreviewContent" rows="10" ng-init="init()"></textarea>
+                        <textarea class="form-control" id="newsPreviewContent" name="newsPreviewContent" ng-model="PreviewContent" ng-minlength="10" ng-maxlength="1000" rows="10" required></textarea>
+                        <div ng-messages="newsCreateForm.newsPreviewContent.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 10 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 1000 символов</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12 ">
                     <div class="form-group">
                         <label for="">Содержание:</label>
-                        <textarea class="form-control" id="newsContent" name="newsContent" ng-model="Content" rows="10" ng-init="init()"></textarea>
+                        <textarea class="form-control" id="newsContent" name="newsContent" ng-model="Content" rows="15" ng-init="init()"></textarea>
                     </div>
                 </div>
                 <div class="col-md-4 ">
@@ -38,7 +43,7 @@
                     </div>
                     <div class="uploads">
                         <div class="">
-                            <img name="resourse1" class="resourse1 img-responsive" title="" />
+                            <img name="resourse1" class="resourse1 img-responsive" ng-model="ImgUrl" title="" required />
                             <div ng-messages="newsCreateForm.resourse1.$error" class="errors" ng-show="creation">
                                 <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
                             </div>

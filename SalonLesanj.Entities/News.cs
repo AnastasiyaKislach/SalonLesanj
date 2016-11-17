@@ -17,7 +17,6 @@ namespace SalonLesanj.Entities {
 		[MaxLength(2048)]
 		public string PreviewContent { get; set; }
 
-		[Required]
 		[MaxLength(2048)]
 		public string Content { get; set; }
 

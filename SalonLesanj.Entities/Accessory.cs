@@ -12,7 +12,6 @@ namespace SalonLesanj.Entities {
 		[MaxLength(1024)]
 		public string ImageUrl { get; set; }
 
-		[Required]
 		[MaxLength(2048)]
 		public string Description { get; set; }
 

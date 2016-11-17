@@ -4,17 +4,17 @@
     angular.module('news')
         .controller('NewsCreateController', NewsCreateController);
 
-    NewsCreateController.$inject = ['$scope', 'dataContext', 'accountService', '$location', '$route'];
+    NewsCreateController.$inject = ['$scope', 'dataContext', 'accountService', '$location', '$route', 'config'];
 
-    function NewsCreateController($scope, dataContext, accountService, $location, $route) {
+    function NewsCreateController($scope, dataContext, accountService, $location, $route, config) {
 
        
         $scope.init = function () {
 
             CKEDITOR.replace('newsContent',
             {
-                filebrowserImageBrowseUrl: 'api/File',
-                filebrowserImageUploadUrl: 'api/File'
+                filebrowserImageBrowseUrl: config.CTRL_FILE,
+                filebrowserImageUploadUrl: config.CTRL_FILE
                 //,filebrowserWindowWidth: '640',
                 //filebrowserWindowHeight: '480'
             });
@@ -27,6 +27,7 @@
                 $scope.creation = true;
                 if (newsCreateForm.$valid) {
                     var content = CKEDITOR.instances.newsContent.getData();
+
                     var data = {
                         ImageUrl: $scope.file.name,
                         Title: $scope.Title,

@@ -1,4 +1,4 @@
-﻿(function() {
+﻿  (function() {
     'use strict';
 
     angular.module('appointment')
@@ -37,7 +37,7 @@
 
         $scope.noPermit = $scope.selected ? ($scope.selected.length > 5 ? true : false) : false;
 
-        $scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
+        //$scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
 
         function submitApp(appForm) {
             $scope.submiting = true;

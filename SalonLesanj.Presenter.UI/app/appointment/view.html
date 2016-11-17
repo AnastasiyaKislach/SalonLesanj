@@ -22,13 +22,15 @@
             </div>
 
         </div>
-        <p ng-show="isEmptyCart">Вы еще не выбрали платья на примерку</p><a href="" ng-hide="!isEmptyCart" ng-click="show = !show">Все равно продолжить</a>
-        <p ng-show="noPermit">Вы можете выбрать на примерку не более 5 платьев</p>
-        <div class="next-btn">
-            <a href="" ng-click="show = !show" ng-show="isEnable">Продолжить &rarr;</a>
+        <p ng-show="isEmptyCart">Вы еще не выбрали платья на примерку</p>
+        <!--<a href="" ng-hide="!isEmptyCart" ng-click="show = !show">Все равно продолжить</a>-->
+        <!--<p ng-show="noPermit">Вы можете выбрать на примерку не более 5 платьев</p> ng-show="isEnable"-->
+        <div class="next-btn-container">
+            <div class="next-btn">
+                <a href="" ng-click="show = !show">Продолжить &rarr;</a>
+            </div>
         </div>
     </div>
-
 
     <div class="" ng-show="!show">
         <div class="prev-btn">

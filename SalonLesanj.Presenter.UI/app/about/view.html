@@ -4,26 +4,24 @@
             <h2 class="h2_title">О салоне</h2>
         </div>
         <div class="about-info">
-            <div class="about-text">
-                <span ng-bind="settings.About"></span>
-            </div>
+            <!--<div class="about-text">-->
+            <div ng-bind-html="settings.About  | trusted"></div>
+            <!--</div>-->
         </div>
         <div class="interier-container" id="interior">
 
             <div class="row text-center">
                 <h2 class="h2_title">Интерьер салона</h2>
-                <div class="col-md-offset-1 col-md-10 inter">
+                <div ng-bind-html="settings.Interior  | trusted" class="inter"></div>
+                <!--<div class="col-md-offset-1 col-md-10 inter">
                     <img ng-src="Images/inter/inter1.jpg" class="img-responsive" />
-                   <!-- <img ng-src="Images/{{settings.ImageUrl1}}" class="img-responsive" />-->
                 </div>
                 <div class="col-md-offset-1 col-md-10 inter">
                     <img ng-src="Images/inter/inter2.jpg" class="img-responsive" />
-                   <!-- <img ng-src="Images/{{settings.ImageUrl2}}" class="img-responsive" />-->
                 </div>
                 <div class="col-md-offset-1 col-md-10 inter">
                     <img ng-src="Images/inter/inter3.jpg" class="img-responsive" />
-                   <!-- <img ng-src="Images/{{settings.ImageUrl3}}" class="img-responsive" />-->
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="contacts-container contacts-table" id="contacts">

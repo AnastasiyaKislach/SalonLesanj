@@ -4,9 +4,22 @@
     angular.module('news')
         .controller('NewsEditController', NewsEditController);
 
-    NewsEditController.$inject = ['$scope', 'dataContext', 'Upload', 'accountService', '$location', '$routeParams', '$route', '$sce'];
+    NewsEditController.$inject = ['$scope', 'dataContext', 'accountService', '$location', '$routeParams', '$route'];
 
-    function NewsEditController($scope, dataContext, Upload, accountService, $location, $routeParams, $route, $sce) {
+    function NewsEditController($scope, dataContext, accountService, $location, $routeParams, $route) {
+
+
+        $scope.init = function () {
+
+            CKEDITOR.replace('newsContent',
+            {
+                filebrowserImageBrowseUrl: 'api/File',
+                filebrowserImageUploadUrl: 'api/File'
+                //,filebrowserWindowWidth: '640',
+                //filebrowserWindowHeight: '480'
+            });
+        }
+
         if (!accountService.getUser().isAdmin) {
             $location.path('/login');
         } else {
@@ -14,9 +27,9 @@
 
                 dataContext.news.getById($routeParams.id, function (response) {
                     $scope.activeNews = response;
-                    $scope.trustAsHtml = function (string) {
-                        return $sce.trustAsHtml(string);
-                    };
+                    //$scope.trustAsHtml = function (string) {
+                    //    return $sce.trustAsHtml(string);
+                    //};
                 });
             }
 
@@ -29,12 +42,13 @@
                     } else {
                         imageUrl = $scope.activeNews.ImageUrl.replace("/Images/", "");
                     }
-
+                    var content = CKEDITOR.instances.newsContent.getData();
                     var data = {
                         Id: $scope.activeNews.Id,
                         ImageUrl: imageUrl,
                         Title: $scope.activeNews.Title,
-                        Content: $scope.activeNews.Content,
+                        PreviewContent: $scope.activeNews.PreviewContent,
+                        Content: content,
                         Date: $scope.activeNews.Date
                     }
 
@@ -46,9 +60,6 @@
                                 function (response) {
                                     $scope.filesResponse = response;
                                     console.log($scope.filesResponse);
-
-
-
                                 });
                         }
                         $('#newsEditModal').modal('show');
