@@ -1,15 +1,15 @@
-﻿$(document).ready(function () {
-    $('.returnImage').click('click',
-        function (e) {
-            var urlImage = $(this).attr('data-url');
+﻿//$(document).ready(function () {
+//    $('.returnImage').click('click',
+//        function (e) {
+//            var urlImage = $(this).attr('data-url');
 
-            var doc = window.opener.document;
-            var id = doc.getElementsByTagName('label')[3].control.id;
-            doc.getElementById(id).value = urlImage;
+//            var doc = window.opener.document;
+//            var id = doc.getElementsByTagName('label')[3].control.id;
+//            doc.getElementById(id).value = urlImage;
 
-            window.close();
-        });
-});
+//            window.close();
+//        });
+//});
 
 //<style type="text/css">
 //   .returnImage { 
@@ -24,3 +24,22 @@
 //    padding: 5px;
 //}
 //</style>
+
+
+$(document).ready(function () {
+    $('.returnImage').click('click',
+        function (e) {
+            var urlImage = $(this).attr('data-url');
+
+            var doc = window.opener.document;
+            var labels = doc.getElementsByTagName('label');
+            console.log(labels);
+            var id = labels.find(function (item) {
+                return item.textContent = "Ссылка";
+            });
+            console.log(id);
+            doc.getElementById(id).value = urlImage;
+
+            //window.close();
+        });
+});

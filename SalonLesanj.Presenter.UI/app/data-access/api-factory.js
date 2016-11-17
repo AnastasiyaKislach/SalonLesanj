@@ -95,7 +95,6 @@
                             });
                             angular.extend(edit, response);
                         }
-                        angular.extend(cash, response);
                     }
                     success(response);
                 }).error(function (response) {

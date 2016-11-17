@@ -30,7 +30,7 @@
                     var data = {
                         PhoneNumber1: $rootScope.settings.PhoneNumber1,
                         PhoneNumber2: $rootScope.settings.PhoneNumber2,
-                        Adress: $rootScope.settings.Adress,
+                        Address: $rootScope.settings.Address,
                         Email: $rootScope.settings.Email,
                         Worktime1: $rootScope.settings.Worktime1,
                         Worktime2: $rootScope.settings.Worktime2,
@@ -41,13 +41,10 @@
                         Interior: interior,
                         Appointment: $rootScope.settings.Appointment
                     }
-                    dataContext.settings.put(data,
-                        function (response) {
-                            console.log(response);
-                        },
-                        function (response) {
-                            console.log(response);
-                        });
+                    dataContext.settings.put(data, function (){}, function (){});
+                    dataContext.settings.getAll(function (response) {
+                        $rootScope.settings = response;
+                    });
                 }
             }
         }
