@@ -5,7 +5,7 @@
         </div>
         <form name="settingsForm" class="form-data" novalidate="">
             <div class="row half">
-                <div class="col-md-5 ">
+                <div class="col-md-5">
                     <div class="form-group">
                         <label for="">Телефон 1:</label>
                         <input type="text" name="phoneNumber1" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.PhoneNumber1" id="">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-offset-1 col-md-5 ">
+                <div class="col-md-offset-2 col-md-5">
                     <div class="form-group">
                         <label for="">Режим работы:</label>
                         <input type="text" name="worktime1" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="settings.Worktime1" id="">
@@ -74,19 +74,15 @@
                 </div>
             </div>
             <div class="row half">
-                <div class="col-md-11">
+                <div class="col-md-12">
                     <div class="form-group">
                         <label for="">Текст для записи в салон:</label>
                         <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.Appointment" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
-                        <div ng-messages="settingsForm.aboutShort.$error" class="errors" ng-show="update">
-                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
-                            <div class="messages" ng-message="maxlength">Название не должно превышать 1000 символов</div>
-                        </div>
-                    </div>
+                       </div>
                 </div>
             </div>
             <div class="row half">
-                <div class="col-md-11">
+                <div class="col-md-12">
                     <div class="form-group">
                         <label for="">О нас (на главной):</label>
                         <textarea class="form-control aboutShort" name="aboutShort" ng-model="settings.AboutShort" rows="6" cols="80" ng-minlength="2" ng-maxlength="1000"></textarea>
@@ -98,7 +94,7 @@
                 </div>
             </div>
             <div class="row half">
-                <div class="col-md-11">
+                <div class="col-md-12">
                     <div class="form-group">
                         <label for="">О нас (весь текст):</label>
                         <textarea class="form-control about" name="about" ng-model="settings.About" rows="10" cols="80" ></textarea>
@@ -107,7 +103,7 @@
             </div>
 
             <div class="row half">
-                <div class="col-md-11">
+                <div class="col-md-12">
                     <div class="form-group">
                         <label for="">Интерьер:</label>
                         <textarea class="form-control" name="interior" ng-model="settings.Interior" rows="10" cols="80" ng-init="init()"></textarea>

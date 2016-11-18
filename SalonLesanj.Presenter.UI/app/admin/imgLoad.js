@@ -1,8 +1,9 @@
 ﻿function readURL(evt) {
     var files = evt.files; // FileList object
     var src = ['.resourse1', '.resourse2', '.resourse3'];
+    var length = files.length;
     // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, k = 0; i < 3; i++) {
+    for (var i = 0, k = 0; i < length; i++) {
         var f = files[i];
 
         // Only process image files.
@@ -14,7 +15,7 @@
 
         // Closure to capture the file information.
         reader.onload = (
-            function(e) {
+            function (e) {
                 // Render thumbnail.
 
                 $(src[k]).attr('src', e.target.result);

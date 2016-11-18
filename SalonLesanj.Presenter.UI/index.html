@@ -185,33 +185,49 @@
                 <div class="col-md-offset-1 col-md-5 cust">
                     <ul>
                         <li>
-                            <i class="glyphicon glyphicon-earphone"></i>
-                            <span>{{settings.PhoneNumber1}} {{settings.PhoneNumber2}}</span>
+                            <div class="footerlist-glyphicon">
+                                <i class="glyphicon glyphicon-earphone"></i>
+                            </div>
+                            <div class="footerlist-text">
+                                <span>{{settings.PhoneNumber1}}</span>
+                                <br />
+                                <span> {{settings.PhoneNumber2}}</span>
+                            </div>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-map-marker"></i>
-                            <span> {{settings.Address}} </span>
+                            <div class="footerlist-glyphicon">
+                                <i class="glyphicon glyphicon-map-marker"></i>
+                            </div>
+                            <div class="footerlist-text">
+                                <span> {{settings.Address}} </span>
+                            </div>
                         </li>
-                        <li>
-                            <i class="glyphicon glyphicon-envelope"></i>
-                            <span> {{settings.Email}} </span>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="col-md-offset-1 col-md-5 cust2">
                     <ul>
                         <li>
-                            <i class="glyphicon glyphicon-calendar"></i>
-                            <span> Время работы:</span>
+                            <div class="footerlist-glyphicon">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </div>
+                            <div class="footerlist-text">
+                                <span> Время работы:</span>
+                                <br />
+                                <span>{{settings.Worktime1}}</span>
+                                <br />
+                                <span>{{settings.Worktime2}}</span>
+                                <br />
+                                <span>{{settings.Worktime3}}</span>
+                            </div>
                         </li>
                         <li>
-                            <p>{{settings.Worktime1}}</p>
-                        </li>
-                        <li>
-                            <p>{{settings.Worktime2}}</p>
-                        </li>
-                        <li>
-                            <p>{{settings.Worktime3}}</p>
+                            <div class="footerlist-glyphicon">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                            </div>
+                            <div class="footerlist-text">
+                                <span> {{settings.Email}} </span>
+                            </div>
                         </li>
                     </ul>
                 </div>

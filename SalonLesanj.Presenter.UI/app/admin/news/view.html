@@ -8,11 +8,11 @@
                 <div class="col-md-12 "><!--lefthalf-->
                     <div class="form-group">
                         <label for="">Название:</label>
-                        <input type="text" name="newsTitle" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="Title" id="" placeholder="Введите название" required="">
+                        <input type="text" name="newsTitle" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="Title" id="" placeholder="Введите название" required="">
                         <div ng-messages="newsCreateForm.newsTitle.$error" class="errors" ng-show="creation">
                             <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
                             <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
-                            <div class="messages" ng-message="maxlength">Название не должно превышать 50 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
                         </div>
                     </div>
                 </div>
@@ -43,10 +43,8 @@
                     </div>
                     <div class="uploads">
                         <div class="">
-                            <img name="resourse1" class="resourse1 img-responsive" ng-model="ImgUrl" title="" required />
-                            <div ng-messages="newsCreateForm.resourse1.$error" class="errors" ng-show="creation">
-                                <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
-                            </div>
+                            <img name="resourse1" class="resourse1 img-responsive" ng-model="ImgUrl" title="" />
+                            
                         </div>
                     </div>
                 </div>
