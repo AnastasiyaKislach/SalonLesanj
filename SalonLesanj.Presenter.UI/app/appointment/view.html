@@ -20,18 +20,16 @@
                     <a ng-href="#/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
                 </div>
             </div>
-
         </div>
         <p ng-show="isEmptyCart">Вы еще не выбрали платья на примерку</p>
-        <!--<a href="" ng-hide="!isEmptyCart" ng-click="show = !show">Все равно продолжить</a>-->
-        <!--<p ng-show="noPermit">Вы можете выбрать на примерку не более 5 платьев</p> ng-show="isEnable"-->
+        <p ng-show="noPermit">Вы можете выбрать на примерку не более 5 платьев</p>
+        <div ng-bind-html="settings.Appointment | trusted" class="editor-area"></div>
         <div class="next-btn-container">
             <div class="next-btn">
-                <a href="" ng-click="show = !show">Продолжить &rarr;</a>
+                <a href="" ng-show="!noPermit" ng-click="show = !show">Продолжить &rarr;</a>
             </div>
         </div>
     </div>
-
     <div class="" ng-show="!show">
         <div class="prev-btn">
             <a class="" href="" ng-click="show = !show">&larr; Назад</a>

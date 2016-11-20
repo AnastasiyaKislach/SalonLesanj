@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using SalonLesanj.BusinessContracts;
@@ -42,12 +43,13 @@ namespace SalonLesanj.WebServices.Controllers {
 				Phone = viewModel.Phone,
 				Date = viewModel.Date,
 				Details = viewModel.Details,
-				IsApprove = viewModel.IsApprove
+				IsApprove = viewModel.IsApprove,
+				ApprovedDate = DateTime.Now
 			};
 
 			Appointment model = appointmentManager.Add(item, dresses);
 
-			return Ok(model);
+			return Ok(model.Id);
 		}
 
 		protected override AppointmentViewModel ToViewModel(Appointment model) {

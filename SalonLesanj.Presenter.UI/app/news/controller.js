@@ -46,5 +46,12 @@
                         console.log(response);
                     });
         }
+
+        $scope.shareVK = function (news) {
+            sharingService.share.vkontakte('http://localhost:1874', news.Title, news.ImageUrl1, news.Description);
+        }
+        $scope.shareOK = function (news) {
+            sharingService.share.odnoklassniki('http://localhost:1874', news.Description);
+        }
     }
 })();

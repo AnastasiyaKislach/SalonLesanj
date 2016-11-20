@@ -5,9 +5,9 @@
     angular.module('accessories')
         .controller('AccessoriesController', AccessoriesController);
 
-    AccessoriesController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$rootScope', '$route'];
+    AccessoriesController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$rootScope', '$route', 'sharingService'];
 
-    function AccessoriesController($scope, $location, $routeParams, dataContext, $rootScope, $route) {
+    function AccessoriesController($scope, $location, $routeParams, dataContext, $rootScope, $route, sharingService) {
 
         dataContext.kinds.getAll(function (response) {
             $scope.allKinds = response;
@@ -57,7 +57,7 @@
             if ($rootScope.user.isAdmin)
                 dataContext.accessories.remove(id, function (response) {
                     $scope.responseData = response;
-                    console.log(response);
+
                     dataContext.kinds.getById(response.KindId, function (responseKind) {
                         var kind = responseKind;
                         var obj = responseKind.Accessories.find(function (item) {
@@ -65,13 +65,20 @@
                         });
                         responseKind.Accessories.remove(obj);
                     });
-                }, function (response) {
-                    console.log(response);
+                },
+                function (response) {
                 });
-            //$location.path('/accessories');
         }
         $scope.isExist = function (item) {
             return item.Description !== "";
         }
+
+        $scope.shareVK = function (accessory) {
+            sharingService.share.vkontakte('http://localhost:1874', accessory.Title, accessory.ImageUrl1, accessory.Description);
+        }
+        $scope.shareOK = function (accessory) {
+            sharingService.share.odnoklassniki('http://localhost:1874', accessory.Description);
+        }
+
     };
 })();

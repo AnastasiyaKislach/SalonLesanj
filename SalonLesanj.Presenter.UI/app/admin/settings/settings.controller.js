@@ -11,12 +11,16 @@
             CKEDITOR.replace('about',
             {
                 filebrowserImageBrowseUrl: config.CTRL_FILE,
-                filebrowserImageUploadUrl: config.CTRL_FILE
+                filebrowserImageUploadUrl: config.CTRL_FILE,
+                filebrowserWindowWidth: '640',
+                filebrowserWindowHeight: '480'
             });
             CKEDITOR.replace('interior',
             {
                 filebrowserImageBrowseUrl: config.CTRL_FILE,
-                filebrowserImageUploadUrl: config.CTRL_FILE
+                filebrowserImageUploadUrl: config.CTRL_FILE,
+                filebrowserWindowWidth: '640',
+                filebrowserWindowHeight: '480'
             });
         }
         $scope.saveChanges = function (settingsForm) {

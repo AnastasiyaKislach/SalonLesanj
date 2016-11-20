@@ -1,4 +1,4 @@
-﻿  (function() {
+﻿(function () {
     'use strict';
 
     angular.module('appointment')
@@ -12,7 +12,7 @@
         $scope.remove = remove;
         $scope.submitApp = submitApp;
 
-        dataContext.brands.getAll(function(response) {
+        dataContext.brands.getAll(function (response) {
             $scope.brands = response;
         });
 
@@ -27,7 +27,7 @@
         }
         if ($scope.selected.length > 0) {
             for (var j = 0; j < $scope.selected.length; j++) {
-                $scope.selected[j].BrandTitle = $scope.brands.find(function(tmp) {
+                $scope.selected[j].BrandTitle = $scope.brands.find(function (tmp) {
                     return tmp.Id === $scope.selected[j].BrandId;
                 }).Title;
             }
@@ -37,7 +37,7 @@
 
         $scope.noPermit = $scope.selected ? ($scope.selected.length > 5 ? true : false) : false;
 
-        //$scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
+        $scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
 
         function submitApp(appForm) {
             $scope.submiting = true;
@@ -56,25 +56,32 @@
                     Details: $scope.details || 'Детали отсутствуют.',
                     dresses: $scope.selected
                 }
-                dataContext.appointments.post(data, function(response) {
+                dataContext.appointments.post(data, function (response) {
                     console.log(response);
+
+                    //localStorage.clear(); ???
+                    //$scope.selected = []; ???
+
                     $('#appModal').modal('show');
-                    
+
                     $('#appModal').on('hidden.bs.modal', function (event) {
                         $location.path('/');
                         $route.reload();
                     });
-                }, function(response) {
+                }, function (response) {
                     alert('Произошла неизвестная ошибка при формировании заявки.');
                     console.log(response);
                 });
             }
 
         }
+
         function remove(dress) {
             dress.isSelect = false;
             dress.BrandTitle = null;
+            $scope.selected.remove(dress);
+            localStorage.removeItem(dress.Title);
+            $route.reload();
         }
-
     }
 })();

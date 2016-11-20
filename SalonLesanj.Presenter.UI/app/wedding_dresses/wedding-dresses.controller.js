@@ -11,16 +11,28 @@
 
         dataContext.brands.getAll(function (response) {
             $scope.allBrands = response;
+
+            for (var i = 0; i < $scope.allBrands.length; i++) {
+                for (var j = 0; j < $scope.allBrands[i].Dresses.length; j++) {
+                    var dress = $scope.allBrands[i].Dresses[j];
+                    if (localStorage.getItem(dress.Title)) {
+                        $scope.allBrands[i].Dresses[j].isSelect = true;
+                    }
+                }
+            }
+
             if ($routeParams.brand) {
                 $scope.currentBrandTitle = $routeParams.brand;
                 $scope.currentBrand = $scope.allBrands.find(
                     function (item) {
                         return item.Title === $routeParams.brand;
                     });
+
             } else {
                 $location.path($location.path() + '/' + $scope.allBrands[0].Title);
                 $scope.currentBrand = $scope.allBrands[0];
             }
+
             $scope.subview = 'List';
 
             if ($routeParams.id) {
@@ -62,8 +74,10 @@
         $scope.selectDress = function (dress) {
             if (dress.isSelect) {
                 dress.isSelect = false;
+                localStorage.removeItem(dress.Id);
             } else {
                 dress.isSelect = true;
+                localStorage.setItem(dress.Title, dress.Id);
             }
         }
 
@@ -89,6 +103,9 @@
 
         $scope.shareVK = function (dress) {
             sharingService.share.vkontakte('http://localhost:1874', dress.Title, dress.ImageUrl1, dress.Description);
+        }
+        $scope.shareOK = function (dress) {
+            sharingService.share.odnoklassniki('http://localhost:1874', dress.Description);
         }
     };
 })();

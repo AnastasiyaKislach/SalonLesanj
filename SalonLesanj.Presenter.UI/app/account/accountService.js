@@ -4,9 +4,9 @@
     angular.module('account')
         .service('accountService', accountService);
 
-    accountService.$inject = ['$http', 'config', '$rootScope'];
+    accountService.$inject = ['$http', 'config', '$rootScope', '$location', '$route'];
 
-    function accountService($http, config, $rootScope) {
+    function accountService($http, config, $rootScope, $location, $route) {
 
         $rootScope.user = {
             isAuthorize: false,
@@ -61,6 +61,8 @@
             $rootScope.user.isAuthorize = false;
             $rootScope.user.isAdmin = false;
             $rootScope.user.isSuperAdmin = false;
+            $location.path('/');
+            $route.reload();
         }
         function getUser() {
             return $rootScope.user;

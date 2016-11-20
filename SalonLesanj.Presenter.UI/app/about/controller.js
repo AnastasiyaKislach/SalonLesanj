@@ -28,7 +28,6 @@
                     });
                 }).error(function (response) {
                     alert('Произошла неизвестная ошибка при формировании заявки.');
-                    console.log(response);
                 });
             }
         };

@@ -10,6 +10,8 @@ namespace SalonLesanj.WebServices.Models {
 		public DateTime Date { get; set; }
 		public string Details { get; set; }
 		public bool IsApprove { get; set; }
+		public DateTime ApprovedDate { get; set; }
+
 
 		public IEnumerable<DressViewModel> Dresses { get; set; }
 
@@ -25,6 +27,7 @@ namespace SalonLesanj.WebServices.Models {
 			Date = appointment.Date;
 			Details = appointment.Details;
 			IsApprove = appointment.IsApprove;
+			ApprovedDate = appointment.ApprovedDate;
 		}
 	}
 }

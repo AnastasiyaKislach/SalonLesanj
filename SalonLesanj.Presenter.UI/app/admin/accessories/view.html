@@ -9,7 +9,7 @@
 
                     <div class="form-group">
                         <label for="">Название:</label>
-                        <input type="text" name="" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="accessoryTitle" id="" placeholder="Введите название" required="">
+                        <input type="text" name="accessoryTitle" class="form-control" ng-minlength="2" ng-maxlength="20" ng-model="accessoryTitle" id="" placeholder="Введите название" required>
                         <div ng-messages="accessoryCreateForm.accessoryTitle.$error" class="errors" ng-show="creation">
                             <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
                             <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
@@ -20,14 +20,13 @@
                         <label for="">Описание:</label>
                         <textarea class="form-control" id="" name="description" ng-model="description" ng-minlength="10" ng-maxlength="1000" rows="6" placeholder="Введите описание"></textarea>
                         <div ng-messages="accessoryCreateForm.description.$error" class="errors" ng-show="creation">
-                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
                             <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
                             <div class="messages" ng-message="maxlength">Описание не должно превышать 1000 символов</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Категория:</label>
-                        <select ng-model="kindId" name="kindId" class=" form-control">
+                        <select ng-model="kindId" name="kindId" class=" form-control" required>
                             <option disabled="">Выберите категорию</option>
                             <option ng-repeat="kind in accessoryKinds" value="{{kind.Id}}">{{kind.TitleRus}}</option>
                         </select>
@@ -45,9 +44,9 @@
                     <div class="uploads">
                         <div class="">
                             <img name="resourse1" class="resourse1 img-responsive" title="" />
-                            <div ng-messages="accessoryCreateForm.resourse1.$error" class="errors" ng-show="creation">
+                            <!--<div ng-messages="accessoryCreateForm.resourse1.$error" class="errors" ng-show="creation">
                                 <div class="messages" ng-message="required">Необходимо загрузить фотографию</div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>

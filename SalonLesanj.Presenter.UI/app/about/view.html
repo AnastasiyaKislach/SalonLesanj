@@ -4,15 +4,12 @@
             <h2 class="h2_title">О салоне</h2>
         </div>
         <div class="about-info">
-            <!--<div class="about-text">-->
-            <div ng-bind-html="settings.About  | trusted"></div>
-            <!--</div>-->
+            <div ng-bind-html="settings.About  | trusted" class="editor-area"></div>
         </div>
         <div class="interier-container" id="interior">
-
             <div class="row text-center">
                 <h2 class="h2_title">Интерьер салона</h2>
-                <div ng-bind-html="settings.Interior  | trusted" class="inter"></div>
+                <div ng-bind-html="settings.Interior  | trusted" class="inter editor-area"></div>
             </div>
         </div>
         <div class="contacts-container contacts-table" id="contacts">
@@ -72,7 +69,6 @@
                 <div class="col-md-6 arriv">
                     <div class="feedback">
                         <h2 class="h2_title">Обратная связь</h2>
-                        <!--<p>все поля обязательны для заполнения</p>-->
                         <form name="feedbackForm" novalidate="">
                             <div class="form-group">
                                 <label for="name">ФИО:</label>
@@ -104,7 +100,6 @@
                                 <button type="submit" class="btn" ng-click="send(feedbackForm)">Отправить письмо</button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>

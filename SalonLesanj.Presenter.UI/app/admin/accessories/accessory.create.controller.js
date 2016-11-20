@@ -17,6 +17,12 @@
         }
         $scope.create = function (accessoryCreateForm) {
             $scope.creation = true;
+
+            if (!$scope.file) {
+                accessoryCreateForm.$valid = false;
+                return;
+            }
+
             if (accessoryCreateForm.$valid) {
                 var data = {
                     ImageUrl: $scope.file.name,

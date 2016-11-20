@@ -8,23 +8,29 @@
 
     function NewsCreateController($scope, dataContext, accountService, $location, $route, config) {
 
-       
+
         $scope.init = function () {
 
             CKEDITOR.replace('newsContent',
             {
                 filebrowserImageBrowseUrl: config.CTRL_FILE,
-                filebrowserImageUploadUrl: config.CTRL_FILE
-                //,filebrowserWindowWidth: '640',
-                //filebrowserWindowHeight: '480'
+                filebrowserImageUploadUrl: config.CTRL_FILE,
+                filebrowserWindowWidth: '640',
+                filebrowserWindowHeight: '480'
             });
         }
 
         if (!accountService.getUser().isAdmin) {
             $location.path('/login');
         } else {
-                $scope.create = function (newsCreateForm) {
+            $scope.create = function (newsCreateForm) {
                 $scope.creation = true;
+
+                if (!$scope.file) {
+                    newsCreateForm.$valid = false;
+                    return;
+                }
+
                 if (newsCreateForm.$valid) {
                     var content = CKEDITOR.instances.newsContent.getData();
 

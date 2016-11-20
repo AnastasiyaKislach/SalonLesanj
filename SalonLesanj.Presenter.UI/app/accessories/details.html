@@ -5,28 +5,26 @@
         </div>
         <div class="view-details">
             <div class="row">
-                <div class="title">
+                <div class="col-md-12 title">
                     <h2 class="h2_title">{{currentAccessory.Title}}</h2>
                 </div>
-                <div class="big-image-preview text-center">
+                <div class="col-md-12 big-image-preview text-center">
                     <div class="view-image">
                         <img ng-src="{{currentAccessory.ImageUrl}}" alt="{{currentAccessory.Title}}" />
                     </div>
                 </div>
-
-                <div class="text-details" ng-show="isExist(currentAccessory)">
+                <div class="col-md-12" ng-show="isExist(currentAccessory)">
                     <div class="description details-cell">
                         <span class="text-center">
                             {{currentAccessory.Description}}
                         </span>
                     </div>
                 </div>
-                <div class="sharing-box">
+                <div class=" col-md-12 sharing-box">
                     Поделиться
-                    <a><i class="fa fa-vk"></i></a>
-                    <a><i class="fa fa-odnoklassniki"></i></a>
+                    <a href="" ng-click="shareVK(currentAccessory)"><i class="fa fa-vk"></i></a>
+                    <a ng-click="shareOK(currentAccessory)"><i class="fa fa-odnoklassniki"></i></a>
                 </div>
-
             </div>
         </div>
     </div>

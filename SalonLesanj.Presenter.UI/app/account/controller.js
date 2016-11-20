@@ -18,8 +18,6 @@
                     $location.path('/admin');
                 }).error(function (response, e) {
                     $scope.errorLog = response.error_description;
-                    console.log(response);
-                    console.log(e);
                 });
             }
         }
@@ -32,7 +30,6 @@
                     $location.path('/admin');
                 }).error(function (response) {
                     alert('Произошла неизвестная ошибка при регистрации.');
-                    console.log(response);
                 });
             }
         }

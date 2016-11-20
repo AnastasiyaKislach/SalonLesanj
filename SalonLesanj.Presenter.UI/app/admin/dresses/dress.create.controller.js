@@ -25,6 +25,12 @@
 
         $scope.create = function (dressCreateForm) {
             $scope.creation = true;
+
+            if (!$scope.files) {
+                dressCreateForm.$valid = false;
+                return;
+            }
+
             if (dressCreateForm.$valid) {
                 var data = {
                     ImageUrl1: $scope.files[0].name,
@@ -47,7 +53,6 @@
                                     dataContext.files.upload($scope.files[i],
                                          function (response) {
                                              $scope.filesResponse = response;
-                                             console.log($scope.filesResponse);
                                          });
                                 }
 
@@ -59,13 +64,13 @@
                             },
                             function (response) {
                                 alert('Произошла неизвестная ошибка при добавлении.');
-                                console.log(response);
+                                //console.log(response);
                             });
 
-                        console.log($scope.responseData);
+                        //console.log($scope.responseData);
                     },
                     function (response) {
-                        console.log(response);
+                        //console.log(response);
                     });
             }
         }
