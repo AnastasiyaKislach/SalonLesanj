@@ -60,6 +60,7 @@
     <script src="app/accessories/filter.js"></script>
     <script src="app/appointment/controller.js"></script>
     <script src="app/appointment/filterBySelect.js"></script>
+    <script src="app/wedding_dresses/dresses.servise.js"></script>
     <script src="app/wedding_dresses/wedding-dresses.controller.js"></script>
     <script src="app/components/paging/offset.js"></script>
     <script src="app/components/paging/directive.js"></script>
@@ -86,6 +87,7 @@
     <script src="app/admin/settings/settings.controller.js"></script>
     <script src="app/components/sharing/sharing.service.js"></script>
     <script src="app/components/upload/loadService.js"></script>
+
 </head>
 <body id="page-top">
 
@@ -116,7 +118,7 @@
                             <a class="page-scroll" ng-href="#/about">О нас</a>
                         </li>
                         <li>
-                            <a class="page-scroll" ng-href="#/appointment">Запись на примерку</a>
+                            <a class="page-scroll" ng-hide="user.isAdmin" ng-href="#/appointment">Запись на примерку</a>
                         </li>
                         <li>
                             <a ng-href="#/login" ng-hide="user.isAuthorize">

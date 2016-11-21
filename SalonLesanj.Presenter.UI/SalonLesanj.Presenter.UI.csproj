@@ -192,6 +192,7 @@
     <Content Include="app\run.js" />
     <Content Include="app\admin\settings\settings.controller.js" />
     <Content Include="app\admin\settings\view.html" />
+    <Content Include="app\wedding_dresses\dresses.servise.js" />
     <Content Include="app\wedding_dresses\wedding-dresses.controller.js" />
     <Content Include="app\components\brands\brands.controller.js" />
     <Content Include="app\wedding_dresses\filter.js" />

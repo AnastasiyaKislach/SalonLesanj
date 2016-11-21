@@ -4,9 +4,9 @@
     angular.module('appointment')
         .controller('FormController', FormController);
 
-    FormController.$inject = ['$scope', 'dataContext', '$location', '$route'];
+    FormController.$inject = ['$scope', 'dataContext', '$location', '$route', 'dressesService'];
 
-    function FormController($scope, dataContext, $location, $route) {
+    function FormController($scope, dataContext, $location, $route, dressesService) {
         $scope.show = true;
         $scope.selected = [];
         $scope.remove = remove;
@@ -14,30 +14,48 @@
 
         dataContext.brands.getAll(function (response) {
             $scope.brands = response;
+            $scope.selected = dressesService.getSelectDresses($scope.brands);
         });
 
-        if ($scope.brands) {
-            for (var i = 0; i < $scope.brands.length; i++) {
-                for (var k = 0; k < $scope.brands[i].Dresses.length; k++) {
-                    if ($scope.brands[i].Dresses[k].isSelect) {
-                        $scope.selected.push($scope.brands[i].Dresses[k]);
-                    }
-                }
-            }
-        }
-        if ($scope.selected.length > 0) {
-            for (var j = 0; j < $scope.selected.length; j++) {
-                $scope.selected[j].BrandTitle = $scope.brands.find(function (tmp) {
-                    return tmp.Id === $scope.selected[j].BrandId;
-                }).Title;
-            }
-        }
+
+        //if ($scope.brands) {
+        //    for (var i = 0; i < $scope.brands.length; i++) {
+        //        for (var k = 0; k < $scope.brands[i].Dresses.length; k++) {
+        //            if ($scope.brands[i].Dresses[k].isSelect) {
+        //                $scope.selected.push($scope.brands[i].Dresses[k]);
+        //            }
+        //        }
+        //    }
+        //}
+        //if ($scope.selected.length > 0) {
+        //    for (var j = 0; j < $scope.selected.length; j++) {
+        //        $scope.selected[j].BrandTitle = $scope.brands.find(function (tmp) {
+        //            return tmp.Id === $scope.selected[j].BrandId;
+        //        }).Title;
+        //    }
+        //}
 
         $scope.isEmptyCart = $scope.selected ? ($scope.selected.length > 0 ? false : true) : true;
 
         $scope.noPermit = $scope.selected ? ($scope.selected.length > 5 ? true : false) : false;
 
         $scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
+
+        function clearSelected() {
+
+            dressesService.clean($scope.brands);
+
+            //var dresses = $scope.selected;
+
+            //for (var i = 0; i < dresses.length; i++) {
+            //    var dress = $scope.selected[i];
+            //    dress.isSelect = false;
+            //    dress.BrandTitle = null;
+            //}
+            localStorage.clear();
+            $scope.selected = [];
+            //dresses = [];
+        }
 
         function submitApp(appForm) {
             $scope.submiting = true;
@@ -56,22 +74,24 @@
                     Details: $scope.details || 'Детали отсутствуют.',
                     dresses: $scope.selected
                 }
-                dataContext.appointments.post(data, function (response) {
-                    console.log(response);
 
-                    //localStorage.clear(); ???
-                    //$scope.selected = []; ???
+                clearSelected();
 
-                    $('#appModal').modal('show');
+                //dataContext.appointments.post(data, function (response) {
+                //    console.log(response);
 
-                    $('#appModal').on('hidden.bs.modal', function (event) {
-                        $location.path('/');
-                        $route.reload();
-                    });
-                }, function (response) {
-                    alert('Произошла неизвестная ошибка при формировании заявки.');
-                    console.log(response);
-                });
+                //    clearSelected();
+
+                //    $('#appModal').modal('show');
+
+                //    $('#appModal').on('hidden.bs.modal', function (event) {
+                //        $location.path('/');
+                //        $route.reload();
+                //    });
+                //}, function (response) {
+                //    alert('Произошла неизвестная ошибка при формировании заявки.');
+                //    console.log(response);
+                //});
             }
 
         }
@@ -80,7 +100,7 @@
             dress.isSelect = false;
             dress.BrandTitle = null;
             $scope.selected.remove(dress);
-            localStorage.removeItem(dress.Title);
+            //localStorage.removeItem(dress.Title);
             $route.reload();
         }
     }

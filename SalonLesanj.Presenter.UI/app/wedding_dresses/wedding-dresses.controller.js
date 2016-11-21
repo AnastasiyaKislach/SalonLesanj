@@ -5,9 +5,9 @@
     angular.module('dresses')
         .controller('WeddingDressesController', WeddingDressesController);
 
-    WeddingDressesController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$rootScope', '$route', 'sharingService'];
+    WeddingDressesController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$rootScope', '$route', 'sharingService', 'dressesService'];
 
-    function WeddingDressesController($scope, $location, $routeParams, dataContext, $rootScope, $route, sharingService) {
+    function WeddingDressesController($scope, $location, $routeParams, dataContext, $rootScope, $route, sharingService, dressesService) {
 
         dataContext.brands.getAll(function (response) {
             $scope.allBrands = response;
