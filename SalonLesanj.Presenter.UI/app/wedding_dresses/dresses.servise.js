@@ -43,7 +43,7 @@
             each(brands, function (brand, dress, index) {
                 if (ids.includes(dress.Id)) {
                     dress.isSelect = true;
-                    dress.Title = brand.BrandTitle;
+                    dress.BrandTitle = brand.BrandTitle;
                     selected.push(dress);
                 }
             });
