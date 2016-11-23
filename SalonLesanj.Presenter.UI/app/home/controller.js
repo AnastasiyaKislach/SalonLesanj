@@ -4,22 +4,22 @@
     angular.module('app')
         .controller('InfoController', InfoController);
 
-    InfoController.inject = ['$scope', 'dataContext'];
+    InfoController.inject = ['$rootScope', 'dataContext'];
 
-    function InfoController($scope, dataContext) {
+    function InfoController($rootScope, dataContext) {
 
-        dataContext.brands.getAll(function (response) {
-            $scope.brands = response;
-        });
-        dataContext.kinds.getAll(function (response) {
-            $scope.kinds = response;
-        });
-        $scope.$watch("brands", function (newValue) {
-            $scope.brands = newValue;
-        });
-        $scope.$watch("kinds", function (newValue) {
-            $scope.kinds = newValue;
-        });
+        //dataContext.brands.getAll(function (response) {
+        //    $rootScope.brands = response;
+        //});
+        //dataContext.kinds.getAll(function (response) {
+        //    $rootScope.kinds = response;
+        //});
+        //$scope.$watch("brands", function (newValue) {
+        //    $scope.brands = newValue;
+        //});
+        //$scope.$watch("kinds", function (newValue) {
+        //    $scope.kinds = newValue;
+        //});
 
     }
 })();

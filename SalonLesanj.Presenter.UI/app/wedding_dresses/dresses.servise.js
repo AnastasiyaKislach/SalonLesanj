@@ -28,7 +28,7 @@
             return selected;
         }
 
-        //returns only ids of selected dresses for localstorage 
+        //returns only ids of selected dresses for localStorage 
         function getDressesArrayId(brands) {
             var selected = getSelectDresses(brands);
             var selectedIds = selected.map(function (dress) {

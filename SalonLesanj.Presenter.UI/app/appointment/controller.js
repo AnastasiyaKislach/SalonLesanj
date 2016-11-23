@@ -7,6 +7,7 @@
     FormController.$inject = ['$scope', 'dataContext', '$location', '$route', 'dressesService', '$rootScope'];
 
     function FormController($scope, dataContext, $location, $route, dressesService, $rootScope) {
+
         $scope.show = true;
         $scope.selected = [];
         $scope.remove = remove;
@@ -25,9 +26,7 @@
             $scope.isEnable = !$scope.isEmptyCart && !$scope.noPermit;
 
         });
-
-
-
+        
         function clearSelected() {
             dressesService.clean($scope.brands);
             localStorage.clear();
@@ -36,7 +35,7 @@
 
         function submitApp(appForm) {
             $scope.submiting = true;
-            clearSelected();
+           
             if (appForm.$valid) {
                 var hours = $scope.time.match(/^([0-1][0-9]|[2][0-3]):([0-5][0-9])/)[1];
                 var year = $scope.date.getFullYear();

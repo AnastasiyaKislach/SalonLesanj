@@ -16,31 +16,29 @@
             }
         });
 
-            dataContext.brands.getAll(function (response) {
-                var dresses = localStorage.getItem("selectedDresses");
-                dresses = JSON.parse(dresses);
-                var selected = dressesService.dressesMatching(response, dresses);
-                localStorage.removeItem("selectedDresses");
-            });
-       
+        dataContext.brands.getAll(function (response) {
+            $rootScope.brands = response;
+            var dresses = localStorage.getItem("selectedDresses");
+            dresses = JSON.parse(dresses);
+            var selected = dressesService.dressesMatching(response, dresses);
+        });
+
 
         window.onunload = function () {
-            console.log("ykjsdjnfjjfjdnfjdnf");
             dataContext.brands.getAll(function (response) {
                 var selectedIds = dressesService.getDressesArrayId(response);
                 var str = JSON.stringify(selectedIds);
                 var selected = localStorage.setItem("selectedDresses", str);
-                sessionStorage.setItem("selectedDresses", str);
+                alert(selected);
             });
         };
 
         dataContext.settings.getAll(function (response) {
             $rootScope.settings = response;
         });
-
-        //dataContext.brands.getAll(function (response) {
-        //    var selectedIds = localStorage.getItem("selectedDresses");
-        //    var selectedDresses = dressesService.dressesMatching(response, selectedIds);
-        //});
+       
+        dataContext.kinds.getAll(function (response) {
+            $rootScope.kinds = response;
+        });
     }
 })();
