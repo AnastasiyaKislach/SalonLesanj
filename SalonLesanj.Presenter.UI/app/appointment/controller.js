@@ -13,8 +13,8 @@
         $scope.submitApp = submitApp;
 
         dataContext.brands.getAll(function (response) {
+            $scope.selected = dressesService.getSelectDresses(response);
             $scope.brands = response;
-            $scope.selected = dressesService.getSelectDresses($scope.brands);
             //var dresses = localStorage.getItem("selectedDresses");
             //$scope.selected = dressesService.dressesMatching(response, dresses);
 
@@ -66,7 +66,6 @@
                     });
                 }, function (response) {
                     alert('Произошла неизвестная ошибка при формировании заявки.');
-                    console.log(response);
                 });
             }
 

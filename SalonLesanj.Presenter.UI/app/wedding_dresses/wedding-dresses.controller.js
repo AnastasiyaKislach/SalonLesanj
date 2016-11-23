@@ -20,8 +20,10 @@
             //        }
             //    }
             //}
-            var selectedIds = localStorage.getItem("selectedDresses");
-            var selectedDresses = dressesService.dressesMatching(response, selectedIds);
+            //var selectedIds = localStorage.getItem("selectedDresses");
+            //var selectedDresses = dressesService.dressesMatching(response, selectedIds);
+
+            $scope.selected = dressesService.getSelectDresses($scope.allBrands);
 
             if ($routeParams.brand) {
                 $scope.currentBrandTitle = $routeParams.brand;

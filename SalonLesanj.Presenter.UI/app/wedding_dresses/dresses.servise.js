@@ -21,7 +21,7 @@
             each(brands,
                 function (brand, dress, index) {
                     if (dress.isSelect) {
-                        dress.BrandTitle = brand.Title;
+                        //dress.BrandTitle = brand.Title;
                         selected.push(dress);
                     }
                 });
@@ -43,7 +43,7 @@
             each(brands, function (brand, dress, index) {
                 if (ids.includes(dress.Id)) {
                     dress.isSelect = true;
-                    dress.BrandTitle = brand.BrandTitle;
+                    dress.BrandTitle = brand.Title;
                     selected.push(dress);
                 }
             });
