@@ -4,9 +4,9 @@
     angular.module('appointment')
         .controller('FormController', FormController);
 
-    FormController.$inject = ['$scope', 'dataContext', '$location', '$route', 'dressesService', '$rootScope'];
+    FormController.$inject = ['$scope', 'dataContext', '$location', '$route', 'dressesService'];
 
-    function FormController($scope, dataContext, $location, $route, dressesService, $rootScope) {
+    function FormController($scope, dataContext, $location, $route, dressesService) {
 
         $scope.show = true;
         $scope.selected = [];
@@ -14,11 +14,11 @@
         $scope.submitApp = submitApp;
 
         dataContext.brands.getAll(function (response) {
-            $scope.selected = dressesService.getSelectDresses(response);
             $scope.brands = response;
-            //var dresses = localStorage.getItem("selectedDresses");
-            //$scope.selected = dressesService.dressesMatching(response, dresses);
 
+            $scope.selected = dressesService.dressesMatching(response);
+            $scope.selectedIds = dressesService.getDressesArrayId(response);
+            
             $scope.isEmptyCart = $scope.selected ? ($scope.selected.length > 0 ? false : true) : true;
 
             $scope.noPermit = $scope.selected ? ($scope.selected.length > 5 ? true : false) : false;
@@ -29,8 +29,8 @@
         
         function clearSelected() {
             dressesService.clean($scope.brands);
-            localStorage.clear();
             $scope.selected = [];
+            $scope.selectedIds = [];
         }
 
         function submitApp(appForm) {
@@ -67,13 +67,14 @@
                     alert('Произошла неизвестная ошибка при формировании заявки.');
                 });
             }
-
         }
 
         function remove(dress) {
             dress.isSelect = false;
             dress.BrandTitle = null;
             $scope.selected.remove(dress);
+            $scope.selectedIds.remove(dress.Id);
+            dressesService.dressLocalStorage($scope.selectedIds);
         }
     }
 })();

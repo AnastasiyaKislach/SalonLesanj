@@ -12,18 +12,9 @@
         dataContext.brands.getAll(function (response) {
             $scope.allBrands = response;
 
-            //for (var i = 0; i < $scope.allBrands.length; i++) {
-            //    for (var j = 0; j < $scope.allBrands[i].Dresses.length; j++) {
-            //        var dress = $scope.allBrands[i].Dresses[j];
-            //        if (localStorage.getItem(dress.Title)) {
-            //            $scope.allBrands[i].Dresses[j].isSelect = true;
-            //        }
-            //    }
-            //}
-            //var selectedIds = localStorage.getItem("selectedDresses");
-            //var selectedDresses = dressesService.dressesMatching(response, selectedIds);
+            var selectedDresses = dressesService.dressesMatching($scope.allBrands);
 
-            $scope.selected = dressesService.getSelectDresses($scope.allBrands);
+            $scope.selectedIds = dressesService.getDressesArrayId($scope.allBrands);
 
             if ($routeParams.brand) {
                 $scope.currentBrandTitle = $routeParams.brand;
@@ -78,8 +69,12 @@
         $scope.selectDress = function (dress) {
             if (dress.isSelect) {
                 dress.isSelect = false;
+                $scope.selectedIds.remove(dress.Id);
+                var dresses = dressesService.dressLocalStorage($scope.selectedIds);
             } else {
                 dress.isSelect = true;
+                $scope.selectedIds.push(dress.Id);
+                var selected = dressesService.dressLocalStorage($scope.selectedIds);
             }
         }
 

@@ -92,6 +92,7 @@
             }
             return localStorage.getItem(config.AUTH_TOKEN);
         }
+
         function tokenType(value) {
             if (arguments.length) {
                 localStorage.setItem(config.AUTH_TOKEN_TYPE, value);

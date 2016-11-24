@@ -9,14 +9,16 @@
     function dressesService() {
 
         var self = this;
+        var key = "selectedDresses";
 
-        self.getSelectDresses = getSelectDresses;
+        self.getSelectedDresses = getSelectedDresses;
         self.dressesMatching = dressesMatching;
         self.clean = clean;
         self.getDressesArrayId = getDressesArrayId;
+        self.dressLocalStorage = dressLocalStorage;
 
         //get all brands and return selected dresses
-        function getSelectDresses(brands) {
+        function getSelectedDresses(brands) {
             var selected = [];
             each(brands,
                 function (brand, dress, index) {
@@ -30,7 +32,7 @@
 
         //returns only ids of selected dresses for localStorage 
         function getDressesArrayId(brands) {
-            var selected = getSelectDresses(brands);
+            var selected = getSelectedDresses(brands);
             var selectedIds = selected.map(function (dress) {
                 return dress.Id;
             });
@@ -38,15 +40,30 @@
         }
 
         //get all brands and matching dresses and ids
-        function dressesMatching(brands, ids) {
+        //function dressesMatching(brands, ids) {
+        //    var selected = [];
+        //    each(brands, function (brand, dress, index) {
+        //        if (ids.includes(dress.Id)) {
+        //            dress.isSelect = true;
+        //            dress.BrandTitle = brand.Title;
+        //            selected.push(dress);
+        //        }
+        //    });
+        //    return selected;
+        //}
+
+        function dressesMatching(brands) {
             var selected = [];
-            each(brands, function (brand, dress, index) {
-                if (ids.includes(dress.Id)) {
-                    dress.isSelect = true;
-                    dress.BrandTitle = brand.Title;
-                    selected.push(dress);
-                }
-            });
+            var ids = dressLocalStorage();
+            if (ids.length) {
+                each(brands, function (brand, dress, index) {
+                    if (ids.includes(dress.Id)) {
+                        dress.isSelect = true;
+                        dress.BrandTitle = brand.Title;
+                        selected.push(dress);
+                    }
+                });
+            }
             return selected;
         }
 
@@ -57,6 +74,7 @@
                     dress.BrandTitle = null;
                 }
             });
+            localStorage.removeItem(key);
         }
 
         function each(brands, callback) {
@@ -71,6 +89,18 @@
                 }
             }
         }
+
+        function dressLocalStorage(value) {
+            var json;
+            if (arguments.length) {
+                json = JSON.stringify(value);
+                localStorage.setItem(key, json);
+            }
+            var dresses = localStorage.getItem(key);
+            json = JSON.parse(dresses);
+            return json;
+        }
+
     }
 
 })();
