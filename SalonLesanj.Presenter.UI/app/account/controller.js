@@ -25,10 +25,11 @@
             $scope.submitingReg = true;
             var user = getRegModel();
             if (registerForm.$valid) {
-                accountService.register(user).success(function (response, e) {
-                    accountService.login($scope.emailReg, $scope.passwordReg);
-                    $location.path('/admin');
-                }).error(function (response) {
+                accountService.register(user).success(
+                    function (response, e) {
+                        alert("Регистрация прошла успешно!");
+                        accountService.login($scope.emailReg, $scope.passwordReg);
+                    }).error(function (response) {
                     alert('Произошла неизвестная ошибка при регистрации.');
                 });
             }
