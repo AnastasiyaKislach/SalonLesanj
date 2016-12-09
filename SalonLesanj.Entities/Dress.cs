@@ -9,11 +9,9 @@ namespace SalonLesanj.Entities {
 		[MaxLength(1024)]
 		public string ImageUrl1 { get; set; }
 
-		[Required]
 		[MaxLength(1024)]
 		public string ImageUrl2 { get; set; }
 
-		[Required]
 		[MaxLength(1024)]
 		public string ImageUrl3 { get; set; }
 
@@ -21,7 +19,6 @@ namespace SalonLesanj.Entities {
 		[MaxLength(1024)]
 		public string Title { get; set; }
 
-		[Required]
 		[MaxLength(2048)]
 		public string Description { get; set; }
 

@@ -602,7 +602,6 @@
     <Content Include="Images\ASIA_B.jpg" />
     <Content Include="Images\ASIA_C.jpg" />
     <Content Include="Images\ASIA_D.jpg" />
-    <Content Include="Images\B-5023.jpg" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\Brands\La_Sposa.jpg" />
     <Content Include="Images\Brands\Pronovias.jpg" />
@@ -756,7 +755,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Properties\PublishProfiles\LesanjProfile.pubxml" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -770,6 +768,7 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <None Include="Properties\PublishProfiles\DishyProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />
     <Content Include="Scripts\FileAPI.js" />

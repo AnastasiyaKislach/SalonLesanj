@@ -6,7 +6,6 @@ namespace SalonLesanj.WebServices.Controllers {
 	public class AccessoryController : BaseController<Accessory, AccessoryViewModel> {
 		private IAccessoryManager accessoryManager;
 		private static string imagesPath = "/Images/";
-		//private static string imagesPath = "/Images/Accessories/";
 
 		public AccessoryController(IAccessoryManager accessoryManager)
 			: base(accessoryManager) {

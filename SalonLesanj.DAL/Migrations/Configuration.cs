@@ -10,6 +10,7 @@ namespace SalonLesanj.DAL.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "SalonLesanj.DAL.DataContext";
         }
 
         protected override void Seed(SalonLesanj.DAL.DataContext context)

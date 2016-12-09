@@ -18,7 +18,7 @@
                 <div class="title-box">
                     <a ng-href="#/wedding-dresses/{{currentBrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
                 </div>
-                <div class="like-box">
+                <div class="like-box" ng-hide="user.isAdmin">
                     <a ng-click="selectDress(dress)">
                         <i class="glyphicon" ng-class="{'glyphicon-star': dress.isSelect, 'glyphicon-star-empty': !dress.isSelect}"></i> {{dress.isSelect ? ' удалить из примерки' : ' добавить на примерку'}}
                     </a>

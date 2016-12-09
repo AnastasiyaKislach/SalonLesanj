@@ -126,22 +126,25 @@
 
 
             function upload(file, success, progress, error) {
-                if (!file.$error) {
-                    Upload.upload({
-                        url: self.baseUrl,
-                        file: file,
-                        xsrfHeaderName: 'Authorization',
-                        headers: {
-                            'Authorization': accountService.tokenType() + ' ' + accountService.token()
-                        }
-                    })
-					.progress(progress || function () { })
-					.success(success || function () { })
-					.error(error || function (q, w) {
-					    console.log(q);
-					    console.log(w);
-					});
+                if (file) {
+                    if (!file.$error) {
+                        Upload.upload({
+                            url: self.baseUrl,
+                            file: file,
+                            xsrfHeaderName: 'Authorization',
+                            headers: {
+                                'Authorization': accountService.tokenType() + ' ' + accountService.token()
+                            }
+                        })
+                        .progress(progress || function () { })
+                        .success(success || function () { })
+                        .error(error || function (q, w) {
+                            console.log(q);
+                            console.log(w);
+                        });
+                    }
                 }
+
             }
         }
     }

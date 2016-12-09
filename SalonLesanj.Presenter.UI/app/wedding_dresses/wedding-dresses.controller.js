@@ -42,7 +42,7 @@
 
                     $scope.currentDress = currentDress;
                     $scope.subview = 'Details';
-
+                    
                     var nextIndex = $scope.currentBrand.Dresses.indexOf($scope.currentDress) + 1;
                     if (nextIndex >= $scope.currentBrand.Dresses.length) {
                         $scope.hasNext = false;

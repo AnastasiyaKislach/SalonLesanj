@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using SalonLesanj.BusinessContracts;
@@ -19,11 +20,12 @@ namespace SalonLesanj.WebServices.Controllers {
 
 		[AllowAnonymous]
 		public virtual IHttpActionResult Get() {
-			IEnumerable<TViewModel> vm = dataManager
-				.GetAll()
-				.ToList()
-				.Select(ToViewModel);
-			return Ok(vm);
+			
+				IEnumerable<TViewModel> vm = dataManager
+								.GetAll()
+								.ToList()
+								.Select(ToViewModel);
+				return Ok(vm);
 		}
 
 		[Authorize(Roles = "Admin")]

@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                     <div class="like-share-container">
-                        <div class="like-box">
+                        <div class="like-box" ng-hide="user.isAdmin">
                             <div class="">
                                 <a ng-click="selectDress(currentDress)">
                                     <i class="glyphicon" ng-class="{'glyphicon-star': currentDress.isSelect, 'glyphicon-star-empty': !currentDress.isSelect}"></i> {{currentDress.isSelect ? ' удалить из примерки' : ' добавить на примерку'}}

@@ -48,17 +48,9 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\201611011816108_cscscs2.cs" />
-    <Compile Include="Migrations\201611011816108_cscscs2.Designer.cs">
-      <DependentUpon>201611011816108_cscscs2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611160937340_addition.cs" />
-    <Compile Include="Migrations\201611160937340_addition.Designer.cs">
-      <DependentUpon>201611160937340_addition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611171801347_update constraints.cs" />
-    <Compile Include="Migrations\201611171801347_update constraints.Designer.cs">
-      <DependentUpon>201611171801347_update constraints.cs</DependentUpon>
+    <Compile Include="Migrations\201612091426524_required.cs" />
+    <Compile Include="Migrations\201612091426524_required.Designer.cs">
+      <DependentUpon>201612091426524_required.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611011816108_cscscs2.resx">
-      <DependentUpon>201611011816108_cscscs2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611160937340_addition.resx">
-      <DependentUpon>201611160937340_addition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611171801347_update constraints.resx">
-      <DependentUpon>201611171801347_update constraints.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612091426524_required.resx">
+      <DependentUpon>201612091426524_required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

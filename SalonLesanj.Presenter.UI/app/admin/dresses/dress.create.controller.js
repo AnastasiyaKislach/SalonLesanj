@@ -34,12 +34,12 @@
             if (dressCreateForm.$valid) {
                 var data = {
                     ImageUrl1: $scope.files[0].name,
-                    ImageUrl2: $scope.files[1].name,
-                    ImageUrl3: $scope.files[2].name,
+                    ImageUrl2: $scope.files[1] ? $scope.files[1].name : "",
+                    ImageUrl3: $scope.files[2] ? $scope.files[2].name : "",
                     Title: $scope.dressTitle,
-                    Description: $scope.dressDescription,
+                    Description: $scope.dressDescription ? $scope.dressDescription : "",
                     BrandId: $scope.brandId
-                }
+                };
 
                 dataContext.dresses.post(data,
                     function (response) {

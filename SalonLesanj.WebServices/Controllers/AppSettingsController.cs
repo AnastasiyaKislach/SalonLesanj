@@ -11,8 +11,6 @@ namespace SalonLesanj.WebServices.Controllers {
 			this.settingsManager = settingsManager;
 		}
 		protected virtual void InitSettings() {
-			//StandardKernel kerner = new StandardKernel();
-			//settingsManager = kerner.Get<ISettingsManager>();
 			if (settingsManager != null) {
 				Settings = settingsManager.GetAppSetting();
 			}

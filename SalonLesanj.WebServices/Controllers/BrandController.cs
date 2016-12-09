@@ -7,8 +7,6 @@ namespace SalonLesanj.WebServices.Controllers {
 	public class BrandController : BaseController<Brand, BrandViewModel> {
 		private IBrandManager brandManager;
 		private static string imagesPath = "/Images/";
-		//private static string imagesPath = "/Images/Brands/";
-		//private static string imagesPathDress = "/Images/Dresses/";
 
 		public BrandController(IBrandManager brandManager)
 			: base(brandManager) {
