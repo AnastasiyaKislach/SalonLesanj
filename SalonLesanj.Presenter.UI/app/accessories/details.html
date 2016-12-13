@@ -13,7 +13,7 @@
                         <img ng-src="{{currentAccessory.ImageUrl}}" alt="{{currentAccessory.Title}}" />
                     </div>
                 </div>
-                <div class="col-md-12" ng-show="isExist(currentAccessory)">
+                <div class="col-md-12" ng-show="IsShow(currentDress.Description)">
                     <div class="description details-cell">
                         <span class="text-center">
                             {{currentAccessory.Description}}
@@ -23,7 +23,6 @@
                 <div class=" col-md-12 sharing-box">
                     Поделиться
                     <a href="" ng-click="shareVK(currentAccessory)"><i class="fa fa-vk"></i></a>
-                    <a ng-click="shareOK(currentAccessory)"><i class="fa fa-odnoklassniki"></i></a>
                 </div>
             </div>
         </div>

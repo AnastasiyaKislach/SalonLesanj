@@ -4,9 +4,9 @@
     angular.module('news')
         .controller('NewsController', NewsController);
 
-    NewsController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$route', '$rootScope', '$sanitize'];
+    NewsController.$inject = ['$scope', '$location', '$routeParams', 'dataContext', '$route', '$rootScope', '$sanitize', 'sharingService'];
 
-    function NewsController($scope, $location, $routeParams, dataContext, $route, $rootScope, $sanitize) {
+    function NewsController($scope, $location, $routeParams, dataContext, $route, $rootScope, $sanitize, sharingService) {
         dataContext.news.getAll(function (response) {
             $scope.newsS = response;
         });
@@ -48,10 +48,7 @@
         }
 
         $scope.shareVK = function (news) {
-            sharingService.share.vkontakte('http://localhost:1874', news.Title, news.ImageUrl1, news.Description);
-        }
-        $scope.shareOK = function (news) {
-            sharingService.share.odnoklassniki('http://localhost:1874', news.Description);
+            sharingService.share.vkontakte(location.href, news.Title, location.origin + news.ImageUrl, news.Description);
         }
     }
 })();

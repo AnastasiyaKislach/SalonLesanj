@@ -16,17 +16,17 @@
                 <div class="preview-images-container">
                     <div class="preview-images">
                         <ul>
-                            <li>
+                            <li ng-show="IsShowImg(currentDress.ImageUrl1)">
                                 <div class="img-preview">
                                     <img ng-src="{{currentDress.ImageUrl1}}" ng-click="selectImage(currentDress.ImageUrl1)" ng-class="{'active': (!selectedImage || selectedImage == currentDress.ImageUrl1)}" alt="{{currentDress.Title}}" class="img-responsive" height="200" />
                                 </div>
                             </li>
-                            <li>
+                            <li ng-show="IsShowImg(currentDress.ImageUrl2)">
                                 <div class="img-preview">
                                     <img ng-src="{{currentDress.ImageUrl2}}" ng-click="selectImage(currentDress.ImageUrl2)" ng-class="{'active': selectedImage == currentDress.ImageUrl2}" alt="{{currentDress.Title}}" class="img-responsive" height="200" />
                                 </div>
                             </li>
-                            <li>
+                            <li ng-show="IsShowImg(currentDress.ImageUrl3)">
                                 <div class="img-preview">
                                     <img ng-src="{{currentDress.ImageUrl3}}" ng-click="selectImage(currentDress.ImageUrl3)" ng-class="{'active': selectedImage == currentDress.ImageUrl3}" alt="{{currentDress.Title}}" class="img-responsive" height="200" />
                                 </div>
@@ -44,11 +44,10 @@
                         <div class="sharing-box">
                             Поделиться
                             <a href="" ng-click="shareVK(currentDress)"><i class="fa fa-vk"></i></a>
-                            <a ng-click="shareOK(currentDress)"><i class="fa fa-odnoklassniki"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class=" row text-details">
+                <div class="row text-details" ng-show="IsShow(currentDress.Description)">
                     <div class="description details-cell">
                         <span class="text-center">{{currentDress.Description}}</span>
                     </div>

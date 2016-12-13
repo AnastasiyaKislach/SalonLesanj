@@ -18,7 +18,7 @@
                         return item.Title === $routeParams.kind;
                     });
             } else {
-                $location.path($location.path() + '/' + $scope.allKinds[0].Title); 3
+                $location.path($location.path() + '/' + $scope.allKinds[0].Title); 
                 $scope.currentKind = $scope.allKinds[0];
             }
             $scope.subview = 'List';
@@ -69,16 +69,13 @@
                 function (response) {
                 });
         }
-        $scope.isExist = function (item) {
-            return item.Description !== "";
+
+        $scope.IsShow = function (text) {
+            return text === "";
         }
 
         $scope.shareVK = function (accessory) {
-            sharingService.share.vkontakte('http://localhost:1874', accessory.Title, accessory.ImageUrl1, accessory.Description);
+            sharingService.share.vkontakte(location.href, accessory.Title, location.origin + accessory.ImageUrl, accessory.Description);
         }
-        $scope.shareOK = function (accessory) {
-            sharingService.share.odnoklassniki('http://localhost:1874', accessory.Description);
-        }
-
     };
 })();

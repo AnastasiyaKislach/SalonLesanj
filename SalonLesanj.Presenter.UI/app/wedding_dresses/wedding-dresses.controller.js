@@ -62,6 +62,17 @@
             }
         });
 
+        $scope.IsShowImg = function(src) {
+            if (src.indexOf(".") === -1) {
+                return false;
+            }
+            return true;
+        }
+
+        $scope.IsShow = function (text) {
+            return text === "";
+        }
+
         $scope.selectImage = function (selectedImage) {
             $scope.selectedImage = selectedImage;
         }
@@ -97,10 +108,8 @@
         }
 
         $scope.shareVK = function (dress) {
-            sharingService.share.vkontakte('http://localhost:1874', dress.Title, dress.ImageUrl1, dress.Description);
+            sharingService.share.vkontakte(location.href, dress.Title, location.origin + dress.ImageUrl1, dress.Description);
         }
-        $scope.shareOK = function (dress) {
-            sharingService.share.odnoklassniki('http://localhost:1874', dress.Description);
-        }
+     
     };
 })();
