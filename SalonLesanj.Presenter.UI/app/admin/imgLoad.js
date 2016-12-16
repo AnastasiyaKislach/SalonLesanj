@@ -2,6 +2,7 @@
     var files = evt.files; // FileList object
     var src = ['.resourse1', '.resourse2', '.resourse3'];
     var length = files.length;
+    src.length = length;
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, k = 0; i < length; i++) {
         var f = files[i];

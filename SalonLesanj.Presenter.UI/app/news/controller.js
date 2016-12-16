@@ -21,17 +21,6 @@
                     $location.path('/');
                 }
                 $scope.currentNews = response;
-                $scope.init = function () {
-                    if ($scope.currentNews) {
-                        document.getElementById('vk_share_button').innerHTML = VK.Share.button({
-                            url: 'http://localhost:1874/',
-                            title: $scope.currentNews.Title,
-                            description: $scope.currentNews.Content,
-                            image: 'http://loveza.ru/birthday/86.jpg',
-                            noparse: true
-                        }, { type: 'button', text: 'Опубликовать' });
-                    }
-                }
             });
         }
 

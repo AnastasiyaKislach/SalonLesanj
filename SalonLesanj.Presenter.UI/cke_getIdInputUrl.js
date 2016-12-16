@@ -20,7 +20,7 @@ $(document).ready(function () {
             var doc = window.opener.document;
             var labels = doc.getElementsByTagName('label');
             for (var i = 0; i < labels.length; i++) {
-                if (labels[i].textContent == "Ссылка") {
+                if (labels[i].textContent === "Ссылка") {
                     var id = labels[i].id;
                     var control = doc.getElementById(id).control;
                     control.value = urlImage;

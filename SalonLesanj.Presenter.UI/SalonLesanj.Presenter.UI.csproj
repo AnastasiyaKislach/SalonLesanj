@@ -628,6 +628,7 @@
     <Content Include="Images\LEDURNE_B.jpg" />
     <Content Include="Images\LEDURNE_C.jpg" />
     <Content Include="Images\LEDURNE_D.jpg" />
+    <Content Include="Images\literaD.png" />
     <Content Include="Images\logo_mini.png" />
     <Content Include="Images\news1.jpg" />
     <Content Include="Images\news2.jpg" />
@@ -658,9 +659,6 @@
     <Content Include="Images\Dresses\LEDURNE_B.jpg" />
     <Content Include="Images\Dresses\LEDURNE_C.jpg" />
     <Content Include="Images\Dresses\LEDURNE_D.jpg" />
-    <Content Include="Images\Litera.png" />
-    <Content Include="Images\LiteraL.png" />
-    <Content Include="Images\logo1.png" />
     <Content Include="Images\Accessories\V-2852.jpg" />
     <Content Include="Images\V-2007.jpg" />
     <Content Include="Images\V-2501.jpg" />
@@ -668,7 +666,6 @@
     <Content Include="Images\V-2842.jpg" />
     <Content Include="Images\V-2845.jpg" />
     <Content Include="Images\V-2852.jpg" />
-    <Content Include="Images\logo.png" />
     <Content Include="Images\Пицца с дополнительной сосиской%29.jpg" />
     <Content Include="packages.config" />
     <Content Include="Content\style.less" />

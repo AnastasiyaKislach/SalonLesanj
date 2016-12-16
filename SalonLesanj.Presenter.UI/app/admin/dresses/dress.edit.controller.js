@@ -19,19 +19,31 @@
         } else {
             if ($routeParams.id) {
 
-                dataContext.brands.getAll(function (response) {
-                    $scope.dressBrands = response;
-                });
                 dataContext.dresses.getAll(function (response) {
                     $scope.editDresses = response;
                     $scope.activeDress = $scope.editDresses.find(
                         function (item, index) {
                             return item.Title === $routeParams.id;
                         });
+
+                    if ($scope.activeDress.ImageUrl2) {
+                        if ($scope.activeDress.ImageUrl2.indexOf(".") === -1) {
+                            $scope.activeDress.ImageUrl2 = $scope.activeDress.ImageUrl2.replace("/Images/", "");
+                        }
+                    }
+                    if ($scope.activeDress.ImageUrl3) {
+                        if ($scope.activeDress.ImageUrl3.indexOf(".") === -1) {
+                            $scope.activeDress.ImageUrl3 = $scope.activeDress.ImageUrl3.replace("/Images/", "");
+                        }
+                    }
+
+                    dataContext.brands.getAll(function (response) {
+                        $scope.dressBrands = response;
                     $scope.selected = $scope.dressBrands.find(
                        function (item) {
-                           return item.Id == $scope.activeDress.BrandId;
+                           return item.Id === $scope.activeDress.BrandId;
                        }).Title;
+                    });
                 });
                 $scope.saveChanges = function (dressEditForm) {
                     $scope.update = true;

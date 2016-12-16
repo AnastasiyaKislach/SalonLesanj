@@ -15,13 +15,13 @@
                     <td title="'Номер'" filter="{ Id: 'number'}" sortable="'Id'" ng-switch="row.isEditing" ng-class="Id.$dirty ? 'bg-warning' : ''" ng-form="Id">
                         <span>{{row.Id}}</span>
                     </td>
-                    <td title="'Название'" filter="{ Title: 'text'}" sortable="'Title'" ng-switch="row.isEditing" ng-class="Title.$dirty ? 'bg-warning' : ''" ng-form="Title">
+                    <td title="'Название (англ.)'" filter="{ Title: 'text'}" sortable="'Title'" ng-switch="row.isEditing" ng-class="Title.$dirty ? 'bg-warning' : ''" ng-form="Title">
                         <span ng-if="!row.isEditing">{{row.Title}}</span>
                         <div ng-if="row.isEditing"  class="controls" ng-class="Title.$invalid && Title.$dirty ? 'has-error' : ''" ng-switch-when="true">
                             <input type="text" name="Title" ng-model="row.Title" class="editable-input form-control input-sm" required />
                         </div>
                     </td>
-                    <td title="'Название'" filter="{ TitleRus: 'number'}" sortable="'TitleRus'" ng-switch="row.isEditing" ng-class="TitleRus.$dirty ? 'bg-warning' : ''" ng-form="TitleRus">
+                    <td title="'Название (рус.)'" filter="{ TitleRus: 'number'}" sortable="'TitleRus'" ng-switch="row.isEditing" ng-class="TitleRus.$dirty ? 'bg-warning' : ''" ng-form="TitleRus">
                         <span ng-if="!row.isEditing">{{row.TitleRus}}</span>
                         <div ng-if="row.isEditing" class="controls" ng-class="TitleRus.$invalid && TitleRus.$dirty ? 'has-error' : ''" ng-switch-when="true">
                             <input type="text" name="TitleRus" ng-model="row.TitleRus" class="editable-input form-control input-sm" required />

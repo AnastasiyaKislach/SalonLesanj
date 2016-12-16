@@ -4,9 +4,9 @@
     angular.module('settings')
         .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', '$scope', 'dataContext', 'accountService', 'config'];
+    SettingsController.$inject = ['$rootScope', '$scope', 'dataContext', 'accountService', 'config', '$route'];
 
-    function SettingsController($rootScope, $scope, dataContext, accountService, config) {
+    function SettingsController($rootScope, $scope, dataContext, accountService, config, $route) {
         $scope.init = function () {
             CKEDITOR.replace('about',
             {
@@ -45,7 +45,10 @@
                         Interior: interior,
                         Appointment: $rootScope.settings.Appointment
                     }
-                    dataContext.settings.put(data, function (){}, function (){});
+                    dataContext.settings.put(data, function (response) {
+                        $('#settingsModal').modal('show');
+                        $('#settingsModal').on('hidden.bs.modal', function (event) { });
+                    }, function () { });
                     dataContext.settings.getAll(function (response) {
                         $rootScope.settings = response;
                     });

@@ -23,10 +23,8 @@
                 <div class="col-md-offset-1 col-md-6 righthalf">
                     <div class="form-group">
                         <label for="description">Описание:</label>
-                        <textarea class="form-control" id="description" name="dressDescription" ng-model="activeDress.Description" ng-minlength="10" ng-maxlength="1000" rows="8" required placeholder="Введите описание" value="{{activeDress.Description}}"></textarea>
+                        <textarea class="form-control" id="description" name="dressDescription" ng-model="activeDress.Description" ng-maxlength="1000" rows="8" placeholder="Введите описание" value="{{activeDress.Description}}"></textarea>
                         <div ng-messages="dressEditForm.dressDescription.$error" class="errors" ng-show="update">
-                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
-                            <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
                             <div class="messages" ng-message="maxlength">Описание не должно превышать 1000 символов</div>
                         </div>
                     </div>

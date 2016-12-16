@@ -58,24 +58,14 @@ namespace SalonLesanj.WebServices.Controllers {
 				Url = Url.Content("/Images/" + Path.GetFileName(x))
 			});
 
-			string content = "  <script src='http://code.jquery.com/jquery-2.2.2.js'></script>";
+			string content = " <script src='http://dishy-wedding.ru/Scripts/jquery-3.1.1.js'></script>";
 
 			foreach (var image in images) {
 				content += "<a href='#' class='returnImage' data-url='" + image.Url + "' click='chooseImg(" + image.Url + ")'>" +
 					"<img src='" + image.Url + "' alt='Image' id='#image' data-source='" + image.Url + "' width='200'  height='200' /></a>";
 			}
-			
-			//content += "<script type='text/javascript'> " +
-			//		   "$(document).ready(function () { " +
-			//		   "$('.returnImage').click('click', function (e) { " +
-			//		   "var urlImage = $(this).attr('data-url'); " +
-			//		   "var doc = window.opener.document; " +
-			//		   "var id = doc.getElementsByTagName('label')[3].control.id; " +
-			//		   "doc.getElementById(id).value = urlImage; " +
-			//		   "window.close(); });  }); " +
-			//		   "</script>";
 
-			content += "<script src='http://localhost:1874/cke_getIdInputUrl.js' ></script>"; 
+			content += "<script src='http://dishy-wedding.ru/cke_getIdInputUrl.js' ></script>"; 
 			
 			return new HttpResponseMessage() {
 				Content = new StringContent(

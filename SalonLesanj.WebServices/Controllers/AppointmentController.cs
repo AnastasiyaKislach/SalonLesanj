@@ -66,7 +66,8 @@ namespace SalonLesanj.WebServices.Controllers {
 				Phone = viewModel.Phone,
 				Date = viewModel.Date,
 				Details = viewModel.Details,
-				IsApprove = viewModel.IsApprove
+				IsApprove = viewModel.IsApprove,
+				ApprovedDate = viewModel.ApprovedDate
 				//Dresses = viewModel.Dresses.Select(ToModel).ToList()
 			};
 			return model;

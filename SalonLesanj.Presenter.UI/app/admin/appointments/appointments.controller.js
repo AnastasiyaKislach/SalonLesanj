@@ -24,7 +24,7 @@
             });
         });
 
-        dataContext.dresses.getAll(function(response) {
+        dataContext.dresses.getAll(function (response) {
             $scope.dresses = response;
         });
 
@@ -68,21 +68,22 @@
         }
         function save(row) {
             if (row.Id == 0) {
-                dataContext.appointments.post(row)
-                    .success(function (response) {
+                dataContext.appointments.post(row,
+                    function (response) {
                         row.isEditing = false;
                         row.isAdding = false;
                         angular.extend(row, response);
                         row.$originalRow = response;
-                    });
+                    },
+                    function (response) { });
             } else {
-                dataContext.appointments.put(row)
-                    .success(function (response) {
+                dataContext.appointments.put(row,
+                    function (response) {
                         row.isEditing = false;
                         row.isAdding = false;
                         angular.extend(row, response);
                         row.$originalRow = response;
-                    });
+                    }, function(response){});
             }
 
             $scope.tableParams.reload();

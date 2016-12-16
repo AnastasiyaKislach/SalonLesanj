@@ -43,6 +43,17 @@
                     $scope.currentDress = currentDress;
                     $scope.subview = 'Details';
                     
+                    if ($scope.currentDress.ImageUrl2) {
+                        if ($scope.currentDress.ImageUrl2.indexOf(".") === -1) {
+                            $scope.currentDress.ImageUrl2 = $scope.currentDress.ImageUrl2.replace("/Images/", "");
+                        }
+                    }
+                    if ($scope.currentDress.ImageUrl3) {
+                        if ($scope.currentDress.ImageUrl3.indexOf(".") === -1) {
+                            $scope.currentDress.ImageUrl3 = $scope.currentDress.ImageUrl3.replace("/Images/", "");
+                        }
+                    }
+
                     var nextIndex = $scope.currentBrand.Dresses.indexOf($scope.currentDress) + 1;
                     if (nextIndex >= $scope.currentBrand.Dresses.length) {
                         $scope.hasNext = false;
