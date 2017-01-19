@@ -12,6 +12,7 @@
 		public string About { get; set; }
 		public string Interior { get; set; }
 		public string Appointment { get; set; }
+		public string Instagram { get; set; }
 
 	}
 }
