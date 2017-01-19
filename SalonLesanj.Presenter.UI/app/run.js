@@ -8,6 +8,7 @@
     run.$inject = ['accountService', '$rootScope', 'dataContext', 'dressesService'];
 
     function run(accountService, $rootScope, dataContext, dressesService) {
+
         accountService.confirmLogin();
 
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
@@ -37,5 +38,6 @@
         dataContext.kinds.getAll(function (response) {
             $rootScope.kinds = response;
         });
+        
     }
 })();

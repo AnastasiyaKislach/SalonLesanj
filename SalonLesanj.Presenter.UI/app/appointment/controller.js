@@ -37,23 +37,31 @@
             $scope.submiting = true;
            
             if (appForm.$valid) {
-                var hours = $scope.time.match(/^([0-1][0-9]|[2][0-3]):([0-5][0-9])/)[1];
+
+                //var time = $scope.time;
+                //var date = $scope.date.toLocaleDateString();
+
+                //var hours = $scope.time.match(/^([0-1][0-9]|[2][0-3]):([0-5][0-9])/)[1];
                 var year = $scope.date.getFullYear();
                 var month = $scope.date.getMonth() + 1;
                 var day = $scope.date.getDate();
-                var minutes = '00';
-                var date = new Date("" + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":00");
-                date = moment(date).format("YYYY-MM-DD HH:mm:ss");
+                //var minutes = '00';
+                //var date = new Date("" + year + "-" + month + "-" + day + " " + $scope.time);
+               // date = moment(date).format("YYYY-MM-DD HH:mm:ss");
+                var date = "" + year + "/" + month + "/" + day + " " + $scope.time;
+              //  date = date.replace(/\./g, "/") + " " + time;
+
                 var data = {
                     Name: $scope.name,
                     Phone: $scope.phone,
                     Date: date,
                     Details: $scope.details || 'Детали отсутствуют.',
                     dresses: $scope.selected
-                }
-
+                };
+              
                 dataContext.appointments.post(data, function (response) {
-                    console.log(response);
+
+                    //alert(JSON.stringify(response));
 
                     clearSelected();
 
@@ -64,7 +72,9 @@
                         $route.reload();
                     });
                 }, function (response) {
-                    alert('Произошла неизвестная ошибка при формировании заявки.');
+                    
+                    alert('Произошла неизвестная ошибка при формировании заявки.  ' + JSON.stringify(response.ExceptionMessage));
+                    
                 });
             }
         }

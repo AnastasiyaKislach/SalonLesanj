@@ -15,7 +15,7 @@
             $scope.submitingLog = true;
             if (loginForm.$valid) {
                 accountService.login($scope.emailLog, $scope.passwordLog).success(function (response) {
-                    $location.path('/admin');
+                    $location.path('/admin').replace();
                 }).error(function (response, e) {
                     $scope.errorLog = response.error_description;
                 });

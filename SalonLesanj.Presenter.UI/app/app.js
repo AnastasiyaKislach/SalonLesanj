@@ -28,6 +28,7 @@
         'ngFileUpload',
         'ngMessages',
         'ngAnimate',
+        'home',
         'apiFactory',
         'data-access',
         'sliderControllers',

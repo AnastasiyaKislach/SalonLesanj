@@ -3,7 +3,7 @@
         <div class="mainmenu">
             <ul id="myTab" class="nav nav-pills">
                 <li ng-repeat="brand in allBrands" ng-class="{'active': currentBrandTitle == brand.Title}">
-                    <a ng-href="#/wedding-dresses/{{brand.Title}}">{{brand.Title}} {{$routeParams.Title}}</a>
+                    <a ng-href="/wedding-dresses/{{brand.Title}}">{{brand.Title}} {{$routeParams.Title}}</a>
                 </li>
             </ul>
         </div>

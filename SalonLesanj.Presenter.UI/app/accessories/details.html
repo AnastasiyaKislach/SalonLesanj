@@ -1,7 +1,7 @@
 ﻿<div class="brands-preview-container text-center">
     <div class="container">
         <div class="back-arrow">
-            <a ng-href="#/accessories" ng-click="back()"><< Вернуться в коллекцию</a>
+            <a ng-href="/accessories" ng-click="back()"><< Вернуться в коллекцию</a>
         </div>
         <div class="view-details">
             <div class="row">
@@ -20,7 +20,7 @@
                         </span>
                     </div>
                 </div>
-                <div class=" col-md-12 sharing-box">
+                <div class=" col-md-12 sharing-box" ng-hide="user.isAdmin">
                     Поделиться
                     <a href="" ng-click="shareVK(currentAccessory)"><i class="fa fa-vk"></i></a>
                 </div>
@@ -29,8 +29,8 @@
     </div>
     <div class="btn-navigate">
         <ul class="pager">
-            <li class=""><a ng-href="#/accessories/{{currentKindTitle}}/details/{{previousAccessory}}" ng-class="{'disabled': !hasPrevious}">&larr; Предующая</a></li>
-            <li class=""><a ng-href="#/accessories/{{currentKindTitle}}/details/{{nextAccessory}}" ng-class="{'disabled': !hasNext}">Следующая &rarr;</a></li>
+            <li class=""><a ng-href="/accessories/{{currentKindTitle}}/details/{{previousAccessory}}" ng-class="{'disabled': !hasPrevious}">&larr; Предующая</a></li>
+            <li class=""><a ng-href="/accessories/{{currentKindTitle}}/details/{{nextAccessory}}" ng-class="{'disabled': !hasNext}">Следующая &rarr;</a></li>
         </ul>
     </div>
 </div>

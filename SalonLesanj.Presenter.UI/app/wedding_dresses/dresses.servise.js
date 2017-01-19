@@ -55,15 +55,18 @@
         function dressesMatching(brands) {
             var selected = [];
             var ids = dressLocalStorage();
-            if (ids.length) {
-                each(brands, function (brand, dress, index) {
-                    if (ids.includes(dress.Id)) {
-                        dress.isSelect = true;
-                        dress.BrandTitle = brand.Title;
-                        selected.push(dress);
-                    }
-                });
+            if (ids) {
+                if (ids.length) {
+                    each(brands, function (brand, dress, index) {
+                        if (ids.includes(dress.Id)) {
+                            dress.isSelect = true;
+                            dress.BrandTitle = brand.Title;
+                            selected.push(dress);
+                        }
+                    });
+                }
             }
+
             return selected;
         }
 

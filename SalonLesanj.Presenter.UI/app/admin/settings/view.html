@@ -24,7 +24,8 @@
                     </div>
                     <div class="form-group">
                         <label for="">Адрес:</label>
-                        <input type="text" name="address" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Address" id="">
+                        <!--<input type="text" name="address" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Address" id="">-->
+                        <textarea class="form-control " name="address" ng-model="settings.Address" rows="3" cols="80" ng-minlength="2" ng-maxlength="100"></textarea>
                         <div ng-messages="settingsForm.address.$error" class="errors" ng-show="update">
                             <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
                             <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
@@ -67,6 +68,14 @@
                         <label for="">Группа в соцсетях:</label>
                         <input type="text" name="socialhub" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Socialhub" id=""/>
                         <div ng-messages="settingsForm.socialhub.$error" class="errors" ng-show="update">
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Инстаграм:</label>
+                        <input type="text" name="instagram" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="settings.Instagram" id="" />
+                        <div ng-messages="settingsForm.instagram.$error" class="errors" ng-show="update">
                             <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
                             <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
                         </div>

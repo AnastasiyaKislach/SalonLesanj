@@ -17,6 +17,7 @@
             AUTH_TOKEN: 'access_token',
             AUTH_TOKEN_TYPE: 'token_type',
             CTRL_FILE: 'api/File',
-            URL_SETTINGS: 'api/AppSettings'
+            URL_SETTINGS: 'api/AppSettings',
+            //URL_INDEX: 'api/Index'
         });
 })();

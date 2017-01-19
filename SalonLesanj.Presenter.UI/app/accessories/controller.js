@@ -11,6 +11,7 @@
 
         dataContext.kinds.getAll(function (response) {
             $scope.allKinds = response;
+
             if ($routeParams.kind) {
                 $scope.currentKindTitle = $routeParams.kind;
                 $scope.currentKind = $scope.allKinds.find(
@@ -18,40 +19,43 @@
                         return item.Title === $routeParams.kind;
                     });
             } else {
-                $location.path($location.path() + '/' + $scope.allKinds[0].Title); 
+                $location.path($location.path() + '/' + $scope.allKinds[0].Title);
                 $scope.currentKind = $scope.allKinds[0];
             }
             $scope.subview = 'List';
-        });
 
-        if ($routeParams.id) {
-            var currentAccessory = $scope.currentKind.Accessories.find(
-                    function (item) {
-                        return item.Title === $routeParams.id;
-                    });
-            if (!currentAccessory) {
-                $location.path('/');
-            } else {
-                $scope.currentAccessory = currentAccessory;
-                $scope.subview = 'Details';
-
-                var nextIndex = $scope.currentKind.Accessories.indexOf($scope.currentAccessory) + 1;
-                if (nextIndex >= $scope.currentKind.Accessories.length) {
-                    $scope.hasNext = false;
+            if ($routeParams.id) {
+                var currentAccessory = $scope.currentKind.Accessories.find(
+                        function (item) {
+                            return item.Title === $routeParams.id;
+                        });
+                if (!currentAccessory) {
+                    $location.path('/');
                 } else {
-                    $scope.hasNext = true;
-                    $scope.nextAccessory = $scope.currentKind.Accessories[nextIndex].Title;
-                }
+                    $scope.currentAccessory = currentAccessory;
+                    $scope.subview = 'Details';
 
-                var previousIndex = $scope.currentKind.Accessories.indexOf($scope.currentAccessory) - 1;
-                if (previousIndex < 0) {
-                    $scope.hasPrevious = false;
-                } else {
-                    $scope.hasPrevious = true;
-                    $scope.previousAccessory = $scope.currentKind.Accessories[previousIndex].Title;
+                    var nextIndex = $scope.currentKind.Accessories.indexOf($scope.currentAccessory) + 1;
+                    if (nextIndex >= $scope.currentKind.Accessories.length) {
+                        $scope.hasNext = false;
+                    } else {
+                        $scope.hasNext = true;
+                        $scope.nextAccessory = $scope.currentKind.Accessories[nextIndex].Title;
+                    }
+
+                    var previousIndex = $scope.currentKind.Accessories.indexOf($scope.currentAccessory) - 1;
+                    if (previousIndex < 0) {
+                        $scope.hasPrevious = false;
+                    } else {
+                        $scope.hasPrevious = true;
+                        $scope.previousAccessory = $scope.currentKind.Accessories[previousIndex].Title;
+                    }
                 }
             }
-        }
+
+        });
+
+
 
         $scope.remove = function (id) {
             if ($rootScope.user.isAdmin)

@@ -2,13 +2,11 @@
     'use strict';
 
     angular.module('app')
-        .config(['$routeProvider', function ($routeProvider) {
+        .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
                     title: 'Home',
-                    templateUrl: 'app/home/view.html',
-                    controller: 'InfoController',
-                    controllerAs: 'ctrl'
+                    templateUrl: 'app/home/view.html'
                 })
                 .when('/wedding-dresses', {
                     title: 'Wedding dresses',
@@ -94,7 +92,9 @@
                 })
                 .when('/admin', {
                     title: 'Admin',
-                    templateUrl: 'app/admin/home/view.html'
+                    templateUrl: 'app/admin/home/view.html',
+                    controller: 'HomeController',
+                    controllerAs: 'ctrl'
                 })
                 .when('/admin/wedding-dresses/create', {
                     title: 'Dresses',
@@ -159,7 +159,7 @@
                 .otherwise({
                     redirectTo: '/'
                 });
-            //$locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(true);
         }
         ]);
 })();

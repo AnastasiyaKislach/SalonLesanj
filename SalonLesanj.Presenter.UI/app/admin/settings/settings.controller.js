@@ -40,6 +40,7 @@
                         Worktime2: $rootScope.settings.Worktime2,
                         Worktime3: $rootScope.settings.Worktime3,
                         Socialhub: $rootScope.settings.Socialhub,
+                        Instagram: $rootScope.settings.Instagram,
                         AboutShort: $rootScope.settings.AboutShort,
                         About: about,
                         Interior: interior,

@@ -51,7 +51,7 @@
                 token(response.access_token);
                 tokenType(response.token_type);
                 confirmLogin();
-            }).error(function () {
+            }).error(function (response) {
                 logout();
             });
         }

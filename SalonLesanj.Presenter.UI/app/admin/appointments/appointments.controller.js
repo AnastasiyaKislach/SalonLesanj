@@ -15,6 +15,9 @@
         $scope.init = init;
 
         dataContext.appointments.getAll(function (response) {
+            response.forEach(function (item, i, arr) {
+                item.Date = item.Date.replace("T", " ");
+            });
             $scope.tableParams = new NgTableParams({ count: 5 }, {
                 counts: [5, 10],
                 dataset: response.map(function (item) {
@@ -55,15 +58,15 @@
                 $scope.tableParams.settings().dataset.remove(row);
                 $scope.tableParams.reload();
             } else {
-                dataContext.appointments.remove(row.Id)
-                    .success(function (response) {
-                        console.log(response);
-                        $scope.tableParams.settings().dataset.remove(row);
-                        $scope.tableParams.reload();
-                    })
-                    .error(function (response) {
-                        console.log(response);
-                    });
+                dataContext.appointments.remove(row.Id,
+                   function (response) {
+                       console.log(response);
+                       $scope.tableParams.settings().dataset.remove(row);
+                       $scope.tableParams.reload();
+                   },
+                   function (response) {
+                       console.log(response);
+                   });
             }
         }
         function save(row) {
@@ -79,11 +82,12 @@
             } else {
                 dataContext.appointments.put(row,
                     function (response) {
+                        response.Date = response.Date.replace("T", " ");
                         row.isEditing = false;
                         row.isAdding = false;
                         angular.extend(row, response);
                         row.$originalRow = response;
-                    }, function(response){});
+                    }, function (response) { });
             }
 
             $scope.tableParams.reload();

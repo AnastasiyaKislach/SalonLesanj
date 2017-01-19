@@ -2,13 +2,15 @@
     <div class="pagination pagination-centered">
         <div class="pagination pagination-centered">
             <ul class="pagination">
-                <li ng-class ="{'disabled': activePage.isFirst}"><a ng-href="/#{{globalPages[activePage.index - 2].path}}">&laquo;</a></li>
+                <li ng-class =""><a ng-href="{{globalPages[0].path}}">&lt;</a></li>
+                <li ng-class ="{'disabled': activePage.isFirst}"><a ng-href="{{globalPages[activePage.index - 2].path}}">&laquo;</a></li>
 
                 <li ng-repeat="page in pages" ng-class="{'active': activePage.index == page.index}">
-                    <a ng-href="/#{{page.path}}">{{page.index}}</a>
+                    <a ng-href="{{page.path}}">{{page.index}}</a>
                 </li>
 
-                <li ng-class ="{'disabled': activePage.isLast}"><a ng-href="/#{{globalPages[activePage.index].path}}">&raquo;</a></li>
+                <li ng-class ="{'disabled': activePage.isLast}"><a ng-href="{{globalPages[activePage.index].path}}">&raquo;</a></li>
+                <li ng-class=""><a ng-href="{{globalPages[0].path}}">&gt;</a></li>
             </ul>
         </div>
     </div>

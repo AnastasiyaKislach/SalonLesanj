@@ -6,7 +6,7 @@
             <div class="col-md-2 favourite" ng-repeat="dress in selected">
                 <div class="collection-item">
                     <div class="item">
-                        <a ng-href="#/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">
+                        <a ng-href="/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">
                             <img ng-src="{{dress.ImageUrl1}}" alt="{{dress.Title}}" />
                         </a>
                     </div>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="title-box">
-                    <a ng-href="#/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
+                    <a ng-href="/wedding-dresses/{{dress.BrandTitle}}/details/{{dress.Title}}">{{dress.Title}}</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                         <h4 class="h4_title">3. Выберите дату и время </h4>
                         <div class="form-group">
                             <label for="calendar">Дата:</label>
-                            <input type="date" name="date" class="form-control" id="calendar" ng-model="date" min="new Date()" max="2016-12-31" required=""></input>
+                            <input type="date" name="date" class="form-control" id="calendar" ng-model="date" min="new Date()" required=""></input>  <!--max="2019-12-31"--> 
                             <div ng-messages="appForm.date.$error" class="errors" ng-show="submiting">
                                 <span class="messages" ng-message="required">Поле обязательно для заполнения</span>
                             </div>
