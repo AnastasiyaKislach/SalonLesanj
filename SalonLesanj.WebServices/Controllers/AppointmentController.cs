@@ -36,9 +36,9 @@ namespace SalonLesanj.WebServices.Controllers {
 
 		[AllowAnonymous]
 		public override IHttpActionResult Post(AppointmentViewModel viewModel) {
-
+			
 			var dresses = viewModel.Dresses.Select(i => i.Id);
-			var item = new Appointment {
+			Appointment item = new Appointment {
 				Name = viewModel.Name,
 				Phone = viewModel.Phone,
 				Date = viewModel.Date,
