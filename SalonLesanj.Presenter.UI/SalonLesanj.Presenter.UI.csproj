@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -153,6 +154,7 @@
     <Content Include="app\admin\dresses\dress.create.controller.js" />
     <Content Include="app\admin\dresses\edit.html" />
     <Content Include="app\admin\dresses\view.html" />
+    <Content Include="app\admin\home\home.controller.js" />
     <Content Include="app\admin\home\view.html" />
     <Content Include="app\admin\imgLoad.js" />
     <Content Include="app\admin\kinds\kinds.controller.js" />
@@ -178,7 +180,6 @@
     <Content Include="app\config.js" />
     <Content Include="app\data-access\api-factory.js" />
     <Content Include="app\data-access\dataContext.js" />
-    <Content Include="app\home\controller.js" />
     <Content Include="app\home\view.html" />
     <Content Include="app\components\slider\view.html" />
     <Content Include="app\news\controller.js" />
@@ -581,6 +582,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen\chosen.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\Accessories\CHAQUETA LA 114.jpg" />
@@ -667,6 +669,7 @@
     <Content Include="Images\V-2845.jpg" />
     <Content Include="Images\V-2852.jpg" />
     <Content Include="Images\Пицца с дополнительной сосиской%29.jpg" />
+    <Content Include="index3.html" />
     <Content Include="packages.config" />
     <Content Include="Content\style.less" />
     <Content Include="Content\font.less" />
@@ -765,6 +768,10 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\googleapis.js" />
+    <Content Include="Scripts\shareApiVk.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls.min.js" />
+    <Content Include="webpack.config.js" />
     <None Include="Properties\PublishProfiles\DishyProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />

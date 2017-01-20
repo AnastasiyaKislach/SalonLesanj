@@ -28,7 +28,7 @@ namespace SalonLesanj.WebServices.Controllers {
 		public override IHttpActionResult Get() {
 			IEnumerable<AppointmentViewModel> vm = appointmentManager
 				.GetAll()
-				//.OrderByDescending(i => i.Date)
+				.OrderByDescending(i => i.Date)
 				.ToList()
 				.Select(ToViewModel);
 			return Ok(vm);
