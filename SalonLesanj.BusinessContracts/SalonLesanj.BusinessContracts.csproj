@@ -42,12 +42,15 @@
     <Compile Include="IAccessoryManager.cs" />
     <Compile Include="IAppointmentManager.cs" />
     <Compile Include="IBrandManager.cs" />
+    <Compile Include="IDataBaseManager.cs" />
     <Compile Include="IDataManager.cs" />
     <Compile Include="IDressManager.cs" />
     <Compile Include="IFeedBackManager.cs" />
     <Compile Include="IKindManager.cs" />
     <Compile Include="INewsManager.cs" />
+    <Compile Include="IPhotoManager.cs" />
     <Compile Include="ISettingsManager.cs" />
+    <Compile Include="ITestimonialManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
