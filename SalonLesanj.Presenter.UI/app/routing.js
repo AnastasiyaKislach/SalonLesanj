@@ -80,10 +80,18 @@
                     controller: 'FormController',
                     controllerAs: 'ctrl'
                 })
-                .when('/partners', {
-                    title: 'Partners',
-                    templateUrl: 'app/components/partners/view.html'
+                .when('/testimonials', {
+                    title: 'Testimonials',
+                    templateUrl: 'app/testimonials/view.html',
+                    controller: 'TestimonialsController',
+                    controllerAs: 'ctrl'
                 })
+                .when('/testimonials/edit/:id', {
+                     title: 'TestimonialsEdit',
+                     templateUrl: 'app/admin/testimonials/edit.html',
+                     controller: 'TestimonialEditController',
+                     controllerAs: 'ctrl'
+                 })
                 .when('/login', {
                     title: 'Login',
                     templateUrl: 'app/account/view.html',
@@ -154,6 +162,12 @@
                     title: 'Settings',
                     templateUrl: 'app/admin/settings/view.html',
                     controller: 'SettingsController',
+                    controllerAs: 'ctrl'
+                })
+                .when('/admin/gallery', {
+                    title: 'Gallery',
+                    templateUrl: 'app/admin/gallery/view.html',
+                    controller: 'GalleryController',
                     controllerAs: 'ctrl'
                 })
                 .otherwise({

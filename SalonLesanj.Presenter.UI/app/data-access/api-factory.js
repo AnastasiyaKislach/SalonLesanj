@@ -23,6 +23,7 @@
 
             var self = this;
             var cash = null;
+            var isCashEnable = true;
 
             self.baseUrl = baseUrl;
             self.getAll = getAll;
@@ -31,14 +32,23 @@
             self.put = put;
             self.upload = upload;
             self.remove = remove;
-
+            self.enableCash = enableCash;
+            self.disableCash = disableCash;
 
             function getAll(success) {
                 if (cash) {
                     success(cash);
                 } else {
-                    $http.get(self.baseUrl).success(function (response) {
-                        cash = response;
+                    $http.get(self.baseUrl,
+                    {
+                        headers: {
+                            'Authorization': accountService.tokenType() + ' ' + accountService.token(),
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        }
+                    }).success(function (response) {
+                        if (isCashEnable) {
+                            cash = response;
+                        }
                         success(response);
                     });
                 }
@@ -68,7 +78,7 @@
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
                 }).success(function (response) {
-                    if (cash) {
+                    if (isCashEnable) {
                         cash.push(response);
                     }
                     success(response);
@@ -124,12 +134,12 @@
                 });
             }
 
-
             function upload(file, success, progress, error) {
                 if (file) {
                     if (!file.$error) {
                         Upload.upload({
                             url: self.baseUrl,
+                           
                             file: file,
                             xsrfHeaderName: 'Authorization',
                             headers: {
@@ -145,6 +155,14 @@
                     }
                 }
 
+            }
+
+            function enableCash() {
+                isCashEnable = true;
+            }
+
+            function disableCash() {
+                isCashEnable = false;
             }
         }
     }

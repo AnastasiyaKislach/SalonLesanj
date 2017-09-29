@@ -1,0 +1,59 @@
+﻿<div class="container fitting-box">
+    <div class="text-center">
+        <h2 class="h2_title">РЕДАКТИРОВАНИЕ ГАЛЕРЕИ</h2>
+    </div>
+    <div class="gallery-collection">
+        <div ng-repeat="(i,photo) in photos" ng-class="{'row' : isRow(i)}">
+            <div class="col-md-4 gallery-img">
+                <div class="collection-item">
+                    <div class="item">
+                        <img ng-src="{{photo.ImageUrl}}" alt="{{photo.Author}}" class="img-responsive" />
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="item" ng-hide="!user.isAdmin">
+                        <a ng-click="remove(photo.Id)">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div ng-show="user.isAdmin">
+            <form name="photoForm" novalidate="">
+                <div class="col-md-4 gallery-img">
+                    <div class="collection-item">
+                        <div class="">
+                            <img src="../../../Images/noimage.png" alt="" class="img-responsive resourse1" name="resourse1" />
+                            <div class="clearfix"></div>
+                        </div>
+                        <div form-group>
+                            <input type="text" name="Author" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="Author" id="Author" placeholder="Имя невесты" required="">
+                            <div ng-messages="photoForm.Author.$error" class="errors" ng-show="create">
+                                <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                                <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                                <div class="messages" ng-message="maxlength">Название не должно превышать 100 символов</div>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="button" class="btn ng-pristine ng-untouched ng-valid ng-empty" ngf-select="" ng-model="file" onchange="readURL(this)">Загрузить фотографию</button>
+                            <button type="submit" class="btn" ng-click="add(photoForm)">Создать запись</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="appModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Редактирование галереи</h4>
+            </div>
+            <div class="modal-body">Фото успешно добавлено!</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

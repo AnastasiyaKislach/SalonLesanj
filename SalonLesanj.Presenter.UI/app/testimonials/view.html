@@ -1,0 +1,95 @@
+﻿<div class="container our-clients-container">
+    <div class="gallery-container">
+        <section id="multyslider">
+            <ng-include src="'app/components/multySlider/view.html'"></ng-include>
+        </section>
+    </div>
+    <div class="testimonials-container">
+        <h2 class="h2_title text-center">Отзывы</h2>
+        <div class="row" ng-repeat="testimonial in testimonials" ng-class="{'testimonial': !isLast(testimonial), 'last-testimonial' : isLast(testimonial)}" >
+            <div class="col-md-2">
+                <img class="img-thumbnail img-rounded " src="{{testimonial.ImageUrl}}" />
+            </div>
+            <div class="col-md-10">
+                <div>
+                    {{testimonial.Author}}, {{testimonial.CreationTime}}
+                </div>
+                <hr />
+                <div class="testimonials-text" ng-bind-html="testimonial.Text | trusted"></div>
+
+                <div class="" ng-show="user.isAdmin">
+                    <div class="news-btn news-btn-edit" ng-show="!testimonial.IsApproved">
+                        <a ng-click="approve(testimonial.Id)">ПОДТВЕРДИТЬ</a>
+                    </div>
+                    <div class="news-btn news-btn-edit">
+                        <a ng-href="/testimonials/edit/{{testimonial.Id}}">РЕДАКТИРОВАТЬ</a>
+                    </div>
+                    <div class="news-btn news-btn-edit">
+                        <a ng-click="remove(testimonial.Id)">УДАЛИТЬ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonialForm arriv">
+        <h2 class="h2_title text-center">Оcтавить отзыв</h2>
+        <form name="testimonialForm" novalidate="">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="author" ng-model="author" ng-minlength="5" ng-maxlength="100" id="name" placeholder="Введите ФИО" required=""><!--ng-pattern="[a-zA-Z]"-->
+                        <div ng-messages="testimonialForm.author.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="maxlength">Длина поля не может превышать 100 символов</div>
+                            <span class="messages" ng-message="minlength">Длина поля должна быть менее 5 символов</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" ng-model="email" id="inputEmail" placeholder="Введите email" required="">
+                        <div ng-messages="testimonialForm.email.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="email">Адрес электронной почты некорректен</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="text" name="text" ng-model="text" ng-minlength="10" ng-maxlength="10000" rows="12" placeholder="Введите отзыв"></textarea>
+                        <div ng-messages="testimonialForm.text.$error" class="errors" ng-show="creation">
+                            <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
+                            <div class="messages" ng-message="maxlength">Описание не должно превышать 10000 символов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="uploads">
+                        <div class="">
+                            <img name="resourse1" class="resourse1 img-responsive" title="" src="../../Images/noimage.png" />
+                        </div>
+                    </div>
+                    <div class="form-group upload-btn">
+                        <div class="file_upload btn">
+                            <div class="button" ngf-select ng-model="file" onchange="readURL(this)"><i class="glyphicon glyphicon-upload"></i> Загрузить фотографию</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-lg btn-add" ng-click="create(testimonialForm)">Отправить отзыв</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="testimonialCreateModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Добавление отзыва</h4>
+            </div>
+            <div class="modal-body">Ваш отзыв принят!</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

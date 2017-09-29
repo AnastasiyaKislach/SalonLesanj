@@ -1,0 +1,80 @@
+﻿<div class="dataContainer">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2_title">РЕДАКТИРОВАНИЕ ОТЗЫВА</h2>
+        </div>
+        <div class="row half">
+            <form name="testimonialEditForm" class="form-data">
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Название:</label>
+                        <input type="text" name="autor" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="activeTestimonial.Author" id="" placeholder="Введите ФИО" required="">
+                        <div ng-messages="testimonialEditForm.autor.$error" class="errors" ng-show="edition">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 50 символов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Адрес электронной почты:</label>
+                        <input type="text" name="email" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="activeTestimonial.Email" id="" placeholder="Введите адрес электронной почты" required="">
+                        <div ng-messages="testimonialEditForm.email.$error" class="errors" ng-show="edition">
+                            <div class="messages" ng-message="required">Поле обязательно для заполнения</div>
+                            <div class="messages" ng-message="minlength">Название должно быть менее 2 символов</div>
+                            <div class="messages" ng-message="maxlength">Название не должно превышать 50 символов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Содержание:</label>
+                        <textarea class="form-control" id="text" name="text" ng-model="activeTestimonial.Text" ng-minlength="10" ng-maxlength="10000" rows="12" placeholder="Введите отзыв"></textarea>
+                        <div ng-messages="testimonialEditForm.text.$error" class="errors" ng-show="edition">
+                            <div class="messages" ng-message="minlength">Описание должно быть менее 10 символов</div>
+                            <div class="messages" ng-message="maxlength">Описание не должно превышать 10000 символов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group upload-btn">
+                        <div class="file_upload btn">
+                            <div class="button" ngf-select ng-model="file" onchange="readURL(this)">
+                                <i class="glyphicon glyphicon-upload"></i> Загрузить фотографию
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uploads">
+                        <div class="">
+                            <img name="resourse1" class="resourse1 img-responsive" title="" ng-src="{{activeTestimonial.ImageUrl}}" ng-model="activeTestimonial.ImageUrl" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row half">
+                    <div class="admin-btn">
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg" ng-click="update(testimonialEditForm)" data-toggle="modal" data-target="#testimonialEditModal">Обновить запись</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="testimonialEditModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Редактирование отзыва</h4>
+            </div>
+            <div class="modal-body">Запись успешно обновлена</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">ОК</button></div>
+        </div>
+    </div>
+</div>

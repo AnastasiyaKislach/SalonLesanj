@@ -56,7 +56,7 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn btn-primary btn-sm" ng-click="save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button>
+                        <button class="btn btn-primary btn-sm" ng-click="save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></button>
                         <button class="btn btn-default btn-sm" ng-click="cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button>
                         <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button>
                         <button class="btn btn-danger btn-sm" ng-click="del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button>

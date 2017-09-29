@@ -154,6 +154,8 @@
     <Content Include="app\admin\dresses\dress.create.controller.js" />
     <Content Include="app\admin\dresses\edit.html" />
     <Content Include="app\admin\dresses\view.html" />
+    <Content Include="app\admin\gallery\gallery.controller.js" />
+    <Content Include="app\admin\gallery\view.html" />
     <Content Include="app\admin\home\home.controller.js" />
     <Content Include="app\admin\home\view.html" />
     <Content Include="app\admin\imgLoad.js" />
@@ -163,6 +165,8 @@
     <Content Include="app\admin\news\news.create.controller.js" />
     <Content Include="app\admin\news\edit.html" />
     <Content Include="app\admin\news\view.html" />
+    <Content Include="app\admin\testimonials\edit.html" />
+    <Content Include="app\admin\testimonials\testimonial.edit.controller.js" />
     <Content Include="app\app.js" />
     <Content Include="app\appointment\compareToDate.js" />
     <Content Include="app\appointment\controller.js" />
@@ -171,6 +175,8 @@
     <Content Include="app\components\gmap\view.html" />
     <Content Include="app\components\brands\view.html" />
     <Content Include="app\components\contacts\view.html" />
+    <Content Include="app\components\multySlider\controller.js" />
+    <Content Include="app\components\multySlider\view.html" />
     <Content Include="app\components\paging\directive.js" />
     <Content Include="app\components\paging\view.html" />
     <Content Include="app\components\sharing\sharing.service.js" />
@@ -193,6 +199,8 @@
     <Content Include="app\run.js" />
     <Content Include="app\admin\settings\settings.controller.js" />
     <Content Include="app\admin\settings\view.html" />
+    <Content Include="app\testimonials\testimonials.controller.js" />
+    <Content Include="app\testimonials\view.html" />
     <Content Include="app\wedding_dresses\dresses.servise.js" />
     <Content Include="app\wedding_dresses\wedding-dresses.controller.js" />
     <Content Include="app\components\brands\brands.controller.js" />
@@ -583,8 +591,28 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen\chosen.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\anna.jpg" />
+    <Content Include="Images\helen.jpeg" />
+    <Content Include="Images\irina.jpg" />
+    <Content Include="Images\isabella.jpeg" />
+    <Content Include="Images\jate.jpg" />
+    <Content Include="Images\magda.jpg" />
+    <Content Include="Images\olga.jpg" />
+    <Content Include="Images\rita.jpg" />
+    <Content Include="Images\snezhana.jpg" />
+    <Content Include="Images\tatiana.jpg" />
+    <Content Include="Images\vanda.jpg" />
+    <Content Include="Images\zara.jpeg" />
+    <Content Include="Images\nice.jpg" />
+    <Content Include="Images\venice.jpg" />
+    <Content Include="Images\noimage.png" />
+    <Content Include="Images\nophoto.jpg" />
+    <Content Include="Images\photo.jpg" />
     <Content Include="Images\Accessories\CHAQUETA LA 114.jpg" />
     <Content Include="Images\Accessories\CHAQUETA LA 184.jpg" />
     <Content Include="Images\Accessories\CHAQUETA LA 216.jpg" />
@@ -662,6 +690,7 @@
     <Content Include="Images\Dresses\LEDURNE_C.jpg" />
     <Content Include="Images\Dresses\LEDURNE_D.jpg" />
     <Content Include="Images\Accessories\V-2852.jpg" />
+    <Content Include="Images\testimonial-bcgrd.jpg" />
     <Content Include="Images\V-2007.jpg" />
     <Content Include="Images\V-2501.jpg" />
     <Content Include="Images\V-2758.jpg" />

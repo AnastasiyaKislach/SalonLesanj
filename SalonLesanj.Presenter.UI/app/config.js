@@ -18,6 +18,8 @@
             AUTH_TOKEN_TYPE: 'token_type',
             CTRL_FILE: 'api/File',
             URL_SETTINGS: 'api/AppSettings',
+            URL_TESTIMONIALS: 'api/Testimonial',
+            URL_PHOTOS: 'api/Photo'
             //URL_INDEX: 'api/Index'
         });
 })();

@@ -1,0 +1,32 @@
+﻿<div ng-controller="MultysliderControllers">
+    <div>
+        <h2 class="h2_title text-center">Наши невесты</h2>
+        <div class="slider-box " id="slider">
+            <div class="">
+                <div ng-repeat="(i, slide) in slides">
+                    <img ng-src="{{slide.ImageUrl}}" ng-show="i == currentIndex" class="img-multy-slider" />
+
+                    <a class="left-control" ng-click="prev()">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right-control" ng-click="next()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="btn-gallery-show-container">
+        <input type="button" class="btn btn-lg btn-add" ng-click="showGallery()" value="Показать галерею" ng-show="!IsShowGallery" />
+        <input type="button" class="btn btn-lg btn-add" ng-click="showGallery()" value="Скрыть галерею" ng-show="IsShowGallery" />
+    </div>
+    <div class="gallery" ng-show="IsShowGallery">
+        <img ng-repeat="(i, slide) in slidesPart" class="img-responsive" ng-src="{{ slide.ImageUrl }}" ng-click="showImg(i)" />
+        <div class="clearfix"></div>
+        <div class="btn-gallery-show-container">
+            <input type="button" class="btn btn-lg btn-lg" ng-click="showSomeMore()" value="Больше" ng-show="IsShowGallery" />
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

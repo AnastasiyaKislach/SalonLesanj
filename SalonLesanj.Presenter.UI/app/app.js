@@ -20,7 +20,9 @@
     angular.module('sharing', []);
     angular.module('file', []);
     angular.module('settings', []);
-
+    angular.module('multysliderController', []);
+    angular.module('testimonials', []);
+    angular.module('gallery', []);
 
     angular.module('app',
     [
@@ -48,6 +50,9 @@
         'sharing',
         'file',
         'settings',
-        'ngSanitize'
+        'ngSanitize',
+        'multysliderController',
+        'testimonials',
+        'gallery'
     ]);
 })();

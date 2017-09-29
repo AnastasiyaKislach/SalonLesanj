@@ -16,5 +16,7 @@
         this.appointments = apiFactory.createApiService(config.URL_APPOINTMENT);
         this.files = apiFactory.createApiService(config.CTRL_FILE);
         this.settings = apiFactory.createApiService(config.URL_SETTINGS);
+        this.testimonials = apiFactory.createApiService(config.URL_TESTIMONIALS);
+        this.photos = apiFactory.createApiService(config.URL_PHOTOS);
     }
 })();
