@@ -15,6 +15,8 @@ namespace  SalonLesanj.DependencyResolver{
 			Bind<IAppointmentManager>().To<AppointmentManager>();
 			Bind<IFeedBackManager>().To<FeedBackManager>();
 			Bind<ISettingsManager>().To<SettingsManager>();
+			Bind<ITestimonialManager>().To<TestimonialManager>();
+			Bind<IPhotoManager>().To<PhotoManager>();
 		}
 	}
 }
