@@ -249,15 +249,19 @@
     <Compile Include="Controllers\AppSettingsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\DataBaseController.cs" />
     <Compile Include="Controllers\DressController.cs" />
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\KindController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Formatters\FileModelFormatter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Microsoft\AspNet\Identity\UserManager.cs" />
     <Compile Include="Models\AccessoryViewModel.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +273,8 @@
     <Compile Include="Models\ImageViewModel.cs" />
     <Compile Include="Models\KindViewModel.cs" />
     <Compile Include="Models\NewsViewModel.cs" />
+    <Compile Include="Models\PhotoViewModel.cs" />
+    <Compile Include="Models\TestimonialViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Providers\UploadMultipartFormDataStreamProvider.cs" />

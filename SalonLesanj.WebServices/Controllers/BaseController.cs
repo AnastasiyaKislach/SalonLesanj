@@ -20,7 +20,6 @@ namespace SalonLesanj.WebServices.Controllers {
 
 		[AllowAnonymous]
 		public virtual IHttpActionResult Get() {
-			
 				IEnumerable<TViewModel> vm = dataManager
 								.GetAll()
 								.ToList()
