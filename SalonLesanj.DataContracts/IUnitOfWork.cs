@@ -10,6 +10,8 @@ namespace SalonLesanj.DataContracts {
 		IRepository<Accessory> Accessories { get; }
 		IRepository<Appointment> Appointments { get; }
 		IRepository<Setting> Settings { get; }
+		IRepository<Testimonial> Testimonials { get; }
+		IRepository<Photo> Photos { get; }
 
 		IRepository<T> GetRepository<T>();
 		
