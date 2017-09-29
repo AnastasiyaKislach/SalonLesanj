@@ -43,13 +43,16 @@
     <Compile Include="AccessoryManager.cs" />
     <Compile Include="AppointmentManager.cs" />
     <Compile Include="BrandManager.cs" />
+    <Compile Include="DataBaseManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DressManager.cs" />
     <Compile Include="FeedBackManager.cs" />
     <Compile Include="KindManager.cs" />
+    <Compile Include="PhotoManager.cs" />
     <Compile Include="SettingsManager.cs" />
     <Compile Include="NewsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestimonialManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SalonLesanj.BusinessContracts\SalonLesanj.BusinessContracts.csproj">
