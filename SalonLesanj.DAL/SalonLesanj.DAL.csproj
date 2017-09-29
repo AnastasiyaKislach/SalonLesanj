@@ -48,6 +48,27 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\201706011152088_add_testimonials.cs" />
+    <Compile Include="Migrations\201706011152088_add_testimonials.Designer.cs">
+      <DependentUpon>201706011152088_add_testimonials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706020737506_resize_testimonials_text.cs" />
+    <Compile Include="Migrations\201706020737506_resize_testimonials_text.Designer.cs">
+      <DependentUpon>201706020737506_resize_testimonials_text.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051411208_add_photo.cs" />
+    <Compile Include="Migrations\201706051411208_add_photo.Designer.cs">
+      <DependentUpon>201706051411208_add_photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706052027286_add_new_fields_photo_entity.cs" />
+    <Compile Include="Migrations\201706052027286_add_new_fields_photo_entity.Designer.cs">
+      <DependentUpon>201706052027286_add_new_fields_photo_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706052033491_remove_new_fields_photo_entity.cs" />
+    <Compile Include="Migrations\201706052033491_remove_new_fields_photo_entity.Designer.cs">
+      <DependentUpon>201706052033491_remove_new_fields_photo_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
@@ -64,6 +85,23 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706011152088_add_testimonials.resx">
+      <DependentUpon>201706011152088_add_testimonials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706020737506_resize_testimonials_text.resx">
+      <DependentUpon>201706020737506_resize_testimonials_text.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051411208_add_photo.resx">
+      <DependentUpon>201706051411208_add_photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706052027286_add_new_fields_photo_entity.resx">
+      <DependentUpon>201706052027286_add_new_fields_photo_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706052033491_remove_new_fields_photo_entity.resx">
+      <DependentUpon>201706052033491_remove_new_fields_photo_entity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

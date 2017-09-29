@@ -16,6 +16,8 @@ namespace SalonLesanj.DAL {
 		private IRepository<Accessory> accessories;
 		private IRepository<Appointment> appointment;
 		private IRepository<Setting> settings;
+		private IRepository<Testimonial> testimonials;
+		private IRepository<Photo> photos;
 
 		public IRepository<News> News {
 			get { return news ?? (news = new BaseRepository<News>(dataContext)); }
@@ -45,6 +47,14 @@ namespace SalonLesanj.DAL {
 			get { return settings ?? new BaseRepository<Setting>(dataContext); }
 		}
 
+		public IRepository<Testimonial> Testimonials {
+			get { return testimonials ?? new BaseRepository<Testimonial>(dataContext); }
+		}
+
+		public IRepository<Photo> Photos {
+			get { return photos ?? new BaseRepository<Photo>(dataContext); }
+		}
+
 		//public void SaveChanges() {
 		//	dataContext.SaveChanges();
 		//}
@@ -58,7 +68,12 @@ namespace SalonLesanj.DAL {
 			var property = GetType().GetProperties().FirstOrDefault(i => i.PropertyType == typeof(IRepository<T>));
 
 			return (IRepository<T>)property.GetValue(this);
-		} 
+		}
+
+
+		public void UsingDetectChanges() {
+			dataContext.ChangeTracker.DetectChanges();
+		}
 
 		public void Dispose() {
 			Dispose(true);
